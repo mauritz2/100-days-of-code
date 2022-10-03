@@ -16,3 +16,11 @@ Seems like it messed up how the Player class was being interpreted in an unexpec
 E.g. I know the deck is a list of cards, so to get the top card I could do [-1]. But if I change it so that the top card is now [0],
 or I change cards to be a dict I now have to change both the Deck class, AND there I referenced [-1]. So better that
 the Deck class has a method called get_top_card() to abstract how it actually gets that card.
+
+### Day 2: October 3, 2022
+
+**Today's Progress**: Finalized a first version of the complete Arboretum game logic
+
+**Thoughts:** Feels good to put all the pieces together finally. There's more clean-up to be done (e.g. allowing for draws, refactoring,
+making it more clear what paths scored points). But main thing would be to build a front-end for this logic that can be interacted with.
+I'd probably turn it into a Flask app. TBD.
