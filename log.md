@@ -39,6 +39,12 @@ I'd probably turn it into a Flask app. TBD.
 The original ambition was to make the cards draggable, but seems easier to start with just having a "Play" button per card that hide/show based on whose turn it is
 Found out about Miniconda - it works well, I can manage envs there without having to install full Conda https://docs.conda.io/en/latest/miniconda.html
 
-
 **Project** https://github.com/mauritz2/arboretum
 
+### Day 4: October 5, 2022
+
+**Today's Progress**: Updated the web app so that it can display a player's hand
+
+**Thoughts:** Brushing up on some Bootstrap and CSS. "Col" without anything means Col-1. To introduce bottom padding do "pb-x" where x is the bottom padding.
+
+**Project** https://github.com/mauritz2/arboretum
