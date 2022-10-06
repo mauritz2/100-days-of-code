@@ -48,3 +48,14 @@ Found out about Miniconda - it works well, I can manage envs there without havin
 **Thoughts:** Brushing up on some Bootstrap and CSS. "Col" without anything means Col-1. To introduce bottom padding do "pb-x" where x is the bottom padding.
 
 **Project** https://github.com/mauritz2/arboretum
+
+### Day 5: October 6, 2022
+
+**Today's Progress**: Continued on the web app - rendering the board and first pass at being able to choose a card and then play it to the board
+
+**Thoughts:**
+CSS learnings: (1) CSS cares about spaces! .table : hover is a syntax error, but .table:hover works,
+(2) margin controls the space OUTSIDE an element, padding controls the space INSIDE an element. I always tend to use padding, but should be using more margin since that's most often what I need to change
+Fun Flask issue to troubleshoot: the web app wouldn't update. The issue was that PyCharm was running the main() which was also running Flask. Stopping that caused the app to start refreshing again.
+
+**Project** https://github.com/mauritz2/arboretum
