@@ -53,9 +53,20 @@ Found out about Miniconda - it works well, I can manage envs there without havin
 
 **Today's Progress**: Continued on the web app - rendering the board and first pass at being able to choose a card and then play it to the board
 
-**Thoughts:**
-CSS learnings: (1) CSS cares about spaces! .table : hover is a syntax error, but .table:hover works,
-(2) margin controls the space OUTSIDE an element, padding controls the space INSIDE an element. I always tend to use padding, but should be using more margin since that's most often what I need to change
-Fun Flask issue to troubleshoot: the web app wouldn't update. The issue was that PyCharm was running the main() which was also running Flask. Stopping that caused the app to start refreshing again.
+**Learnings:**
+* CSS cares about spaces .table : hover didn't work, but .table:hover works,
+* Margin controls the space OUTSIDE an element, padding controls the space INSIDE an element. I always tend to use padding, but should be using more margin since that's most often what I need to change
+* Fun Flask issue to troubleshoot: the web app wouldn't update. The issue was that PyCharm was running the main() which was also running Flask. Stopping that caused the app to start refreshing again.
 
 **Project** https://github.com/mauritz2/arboretum
+
+### Day 6: October 7, 2022
+
+**Today's Progress**: Followed a tutorial on how to set up a simple API using Flask (https://auth0.com/blog/developing-restful-apis-with-python-and-flask/#-span-id--flask-on-docker----span--Dockerizing-Flask-Applications)
+
+**Learnings:**
+* The timeit Python module can be used to test performance on short snippets of code, e.g.: python -m timeit '"-".join(str(n) for n in range(100))'. This is cool. When I tried to time some code earlier both options executed too quickly to see the difference in the execution time, but timeit can execute it 1000s of times to spot the difference. 
+* Windows doesn't have a wget or curl equivalent. But a Windows-version of Wget can be downloaded to Windows and copied into System32 and it works. Very convenient.
+* "export" equivalent on windows is "set"
+* flask run looks for the env variable FLASK_APP and will try to run it - if you set that env variable and flask run the app will run
+* wget -O- outputs the output directly in the console as opposed to a file, saves time. O stands for output and the subsequent - indicates the console is the output.
