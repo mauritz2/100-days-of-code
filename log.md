@@ -70,3 +70,13 @@ Found out about Miniconda - it works well, I can manage envs there without havin
 * "export" equivalent on windows is "set"
 * flask run looks for the env variable FLASK_APP and will try to run it - if you set that env variable and flask run the app will run
 * wget -O- outputs the output directly in the console as opposed to a file, saves time. O stands for output and the subsequent - indicates the console is the output.
+* Edit: apparently curl has been part of Windows since 2017, so it now exists. It works, but annoyingly seems that all quote characters have to be escaped... This works: >curl -i -X POST 127.0.0.1:5000/names -H "Content-Type:application/json" -d "{\"firstName\": \"Frodo\",  \"lastName\" : \"Baggins\" }"
+* If a class inherits object it's to maintain Python 2 compatibility - otherwise useless https://stackoverflow.com/questions/4015417/why-do-python-classes-inherit-object
+* Difference between *args and **kwargs - args is for input without keywords (e.g. 1, 2, kwargs is for keyword input (e.g. {"Value 1":1, "Value 2: 2})
+
+### Day 7: October 10, 2022
+
+**Today's Progress**: Very short session due to travel. Added a basic method for drawing cards in Arboretum.
+
+**Learnings:**
+* For a button, use the <form> tag to specify the URL to navigate to and method (POST/GET) and then <input> to create the button. <button> never seems to be used.
