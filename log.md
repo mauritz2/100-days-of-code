@@ -70,7 +70,7 @@ Found out about Miniconda - it works well, I can manage envs there without havin
 * "export" equivalent on windows is "set"
 * flask run looks for the env variable FLASK_APP and will try to run it - if you set that env variable and flask run the app will run
 * wget -O- outputs the output directly in the console as opposed to a file, saves time. O stands for output and the subsequent - indicates the console is the output.
-* Edit: apparently curl has been part of Windows since 2017, so it now exists. It works, but annoyingly seems that all quote characters have to be escaped... This works: >curl -i -X POST 127.0.0.1:5000/names -H "Content-Type:application/json" -d "{\"firstName\": \"Frodo\",  \"lastName\" : \"Baggins\" }"
+* Edit: apparently curl has been part of Windows since 2017, so it now exists. It works, but annoyingly seems that all quote characters have to be escaped... This works: >curl -i -X POST 127.0.0.1:5000/names -H "Content-Type:application/json" -d "{\\"firstName\\": \\"Frodo\\",  \\"lastName\\" : \\"Baggins\\" }"
 * If a class inherits object it's to maintain Python 2 compatibility - otherwise useless https://stackoverflow.com/questions/4015417/why-do-python-classes-inherit-object
 * Difference between *args and **kwargs - args is for input without keywords (e.g. 1, 2, kwargs is for keyword input (e.g. {"Value 1":1, "Value 2: 2})
 
@@ -79,4 +79,39 @@ Found out about Miniconda - it works well, I can manage envs there without havin
 **Today's Progress**: Very short session due to travel. Added a basic method for drawing cards in Arboretum.
 
 **Learnings:**
-* For a button, use the <form> tag to specify the URL to navigate to and method (POST/GET) and then <input> to create the button. <button> never seems to be used.
+* For a button, use the <form> tag to specify the URL to navigate to and method (POST/GET) and then < input > to create the button. < button > never seems to be used.
+
+**Project** https://github.com/mauritz2/arboretum
+
+### Day 8: October 11, 2022
+
+**Today's Progress**: Continued on the web app - the full game loop of a turn is in place, for two players (!))
+
+**Learnings:**
+* Currently using a lot of hard coded pixel values in the CSS. Better way: (1) pixels for pixel-related things (e.g. borders) (2) em/ex for text-related things (e.g. fonts),
+  (3) %-based things for other elements such as columns. This makes the page more adapted to different window sizes and zoom levels. https://stackoverflow.com/questions/2915508/is-it-bad-to-work-with-pixels-in-css
+* eval() can be used to turn a str representation of a tuple into a Tuple. E.g. turning "(1, 1)" into a (1,1) Tuple. Very cool!
+* import Enum through "from enum import Enum"
+* Reference the value of an enum by Class.VARIABLE.value
+* To hover a class that's assigned to an input I had to nest it like input.myclass:hover to make it work
+* Pillow can be used to programmatically edit images, e.g. adding text to .pngs
+* I ran into an issue where editing an image would distort the colors. Converting to RGB as follows resolved it: my_image = Image.open(filepath).convert('RGB') https://stackoverflow.com/questions/61999451/pil-imagedraw-text-color-changes-to-blue
+* Pathlib is very intuitive. Just create a base_path = pathlib.Path("../base"). Then easy to add a new path with slash, e.g. base_url / "hello.png"
+* The difference between set and with in Jinja2 is that with creates a var scope that can be ended through {% endwidth %} https://stackoverflow.com/questions/53132094/whare-are-the-difference-between-set-and-with-in-jinja
+* onmouseover and onmouseout can be used to change the src of an img on hover, apparently not possible through CSS
+* Apparently best practice is to use img tags if the user will interact with the img, background-imgs for things that are just design
+* To make a container 100% width in Bootstrap - set it to container-fluid
+
+**Project** https://github.com/mauritz2/arboretum
+
+### Day 9: October 12, 2022
+
+**Today's Progress**: Continued on the web app, re-arranging UI elements and made them look nicer. Starting to look a lot better now.
+
+**Learnings:**
+* Ctrl + D copies the selected statements in PyCharm
+* border-radius rounds corners on images - looks much nicer than having square images
+* transition is cool - you can give a class new properties and add transition to "tween" between the property values
+* scale() can be used to set the scale of an UI element, e.g. enlarge on hover
+
+**Project** https://github.com/mauritz2/arboretum
