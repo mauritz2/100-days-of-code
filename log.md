@@ -45,7 +45,7 @@ Found out about Miniconda - it works well, I can manage envs there without havin
 
 **Today's Progress**: Updated the web app so that it can display a player's hand
 
-**Thoughts:** Brushing up on some Bootstrap and CSS. "Col" without anything means Col-1. To introduce bottom padding do "pb-x" where x is the bottom padding.
+**Thoughts:** Brushing up on some Bootstrap and CSS. To introduce bottom padding do "pb-x" where x is the bottom padding.
 
 **Project** https://github.com/mauritz2/arboretum
 
@@ -79,7 +79,7 @@ Found out about Miniconda - it works well, I can manage envs there without havin
 **Today's Progress**: Very short session due to travel. Added a basic method for drawing cards in Arboretum.
 
 **Learnings:**
-* For a button, use the <form> tag to specify the URL to navigate to and method (POST/GET) and then < input > to create the button. < button > never seems to be used.
+* For a button, use the < form > tag to specify the URL to navigate to and method (POST/GET) and then < input > to create the button. < button > never seems to be used.
 
 **Project** https://github.com/mauritz2/arboretum
 
@@ -113,5 +113,27 @@ Found out about Miniconda - it works well, I can manage envs there without havin
 * border-radius rounds corners on images - looks much nicer than having square images
 * transition is cool - you can give a class new properties and add transition to "tween" between the property values
 * scale() can be used to set the scale of an UI element, e.g. enlarge on hover
+
+**Project** https://github.com/mauritz2/arboretum
+
+### Day 10: October 13, 2022
+
+**Today's Progress**: Continued on the web app, working through getting the scoring data to the UI and visualizing it. Need to be able to dynamically highlight cards based on what tree the user selects, which Jinja couldn't do so working through it in JS.
+
+**Learnings:**
+* JavaScript supports dot notation for referencing dict values. Can reference ```my_dict.my_key``` when dict looks like this: ```my_dict = {"my_key":"value"}``` 
+* Syntax to loop through a dictionary in JavaScript:
+```
+  for (const [key, value]) of Object.entries(my_dict)){
+    console.log(key, value);
+    }
+```
+* Syntax to loop through an array in JavaScript to run a function on each item:
+```
+  my_array.forEach(function(array_item){
+    console.log(array_item);
+    }
+
+```
 
 **Project** https://github.com/mauritz2/arboretum
