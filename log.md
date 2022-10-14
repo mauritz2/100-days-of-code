@@ -135,5 +135,23 @@ Found out about Miniconda - it works well, I can manage envs there without havin
     }
 
 ```
+* To append to an array in JS:
+```
+arr.push(element);
+```
+
+**Project** https://github.com/mauritz2/arboretum
+
+### Day 11: October 14, 2022
+
+**Today's Progress**: Finalized a first pass of the web app. Started some re-factoring.
+
+**Learnings:**
+* PyCharm commands:
+* ```Ctrl + Tab``` cycles between recent files. Useful when having a split screen and going between screens.
+* To split the screen: ```Ctrl + Shift + A``` opens up the action command. Then type Split to get the split options. Can be used to unsplit as well.
+* To easily see the definition of a function: ```Ctrl + Shift + I``` when mousing over a variable or function. Then ```Enter``` navigates there, if needed.
+* It's possible to nest row and column classes in Bootstrap. Pretty useful.
+* Bootstrap won't use columns not defined. So defining one col-2 and one col-6 leaves 4 columns unused to the right.
 
 **Project** https://github.com/mauritz2/arboretum
