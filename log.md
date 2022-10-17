@@ -155,3 +155,30 @@ arr.push(element);
 * Bootstrap won't use columns not defined. So defining one col-2 and one col-6 leaves 4 columns unused to the right.
 
 **Project** https://github.com/mauritz2/arboretum
+
+### Day 12: October 17, 2022
+
+**Today's Progress**: Re-factoring the game logic, improving documentation and test coverage
+
+**Learnings:**
+* The most useful test cases are the tests for edge cases - e.g. index out of range issues. 
+Having them fail when refactoring is a good reminder on edge cases to consider. 
+I should write more edge case test cases. Also do a bit more TDD when writing a new func to think through the edge cases,
+e.g. look for KeyErrors, IndexOutOfBound errors.
+* The most common bugs I introduce are IndexOutOfBounds/KeyErrors, and >= errors. When writing > consider 
+what should happen in the == case. When referencing a list: consider what will happen if list index is out of range. When
+referencing a dict: consider if it's possible to reference the dict with a key that doesn't exist.
+* itertools (import itertools) is useful to get permutations and cartesian products of lists
+* Flask-SocketIO can be used to create a socket connection for Flask
+```
+var socket = io(); 
+io.emit("my_event", {"data":"my_data"})
+```
+Can be caught on the server-side by Flask-IO:
+```
+@socketio.on("my_event"):
+def handle_event(data):
+  print(data["data"])
+```
+
+**Project** https://github.com/mauritz2/arboretum
