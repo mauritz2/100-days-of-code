@@ -182,3 +182,33 @@ def handle_event(data):
 ```
 
 **Project** https://github.com/mauritz2/arboretum
+
+### Day 13: October 18, 2022
+
+**Today's Progress**: Starting to incorporate Flask-SocketIO to support multiplayer. Learning more JS and JQuery.
+
+**Learnings:**
+* It is possible to write test cases for Flask views https://flask.palletsprojects.com/en/2.0.x/testing/. Pretty cool, 
+but seems redundant for a small project like this where the main thing that can go wrong is the game logic.
+* ```;``` can have an impact on code running in JS. Trying this code will fail - removing the ```;``` makes it run
+```
+if (is_true){
+  console.log("Hello")
+  };
+else if (is_true){
+ ...
+ } 
+```
+* Arrow functions in JS (defined through ``` => ```) are the equivalent of lambda functions in Python, e.g. anonymous functions
+* Common pattern: Flask backend does ```json.dumps(my_dict)```, then JS frontend does ```JSON.parse(my_dict)```
+* To get a value of an element using Jquery you can use ```$("#my_id").val()```. To set an ID, just give the new value as input to val. ```$("#my_id").val("new value")```!
+* Use ```$("#my_element_id").empty();``` to clear out an element using JQuery
+* Use ```$("#my_element_id").append(<HTML goes here>);``` to append to an element using JQuery
+* If a JS function that triggers on form submit doesn't return anything the form will be submitted to the server (i.e. page refresh).
+Adding ```return false;``` at the end of the function that runs on form submit fixes this so the page isn't refreshed https://stackoverflow.com/questions/13872761/html-javascript-page-is-resetting-after-submitting-form
+* classList.add("class1", "class2") can be used to add two classes to a DOM element   
+
+**Project** https://github.com/mauritz2/arboretum
+
+
+
