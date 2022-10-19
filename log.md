@@ -187,6 +187,8 @@ def handle_event(data):
 
 **Today's Progress**: Starting to incorporate Flask-SocketIO to support multiplayer. Learning more JS and JQuery.
 
+
+
 **Learnings:**
 * It is possible to write test cases for Flask views https://flask.palletsprojects.com/en/2.0.x/testing/. Pretty cool, 
 but seems redundant for a small project like this where the main thing that can go wrong is the game logic.
@@ -207,6 +209,27 @@ else if (is_true){
 * If a JS function that triggers on form submit doesn't return anything the form will be submitted to the server (i.e. page refresh).
 Adding ```return false;``` at the end of the function that runs on form submit fixes this so the page isn't refreshed https://stackoverflow.com/questions/13872761/html-javascript-page-is-resetting-after-submitting-form
 * classList.add("class1", "class2") can be used to add two classes to a DOM element   
+* var declares a global variable, let declares a variable within the specific scope its defined
+* On the server side flask-io: by default emit() just sends a message back to the sender! To make it reach all SIDs, use the ```broadcast=True``` flag
+
+**Project** https://github.com/mauritz2/arboretum
+
+
+
+### Day 13: October 19, 2022
+
+**Today's Progress**: Continued learning about Socket-IO and Flask-SocketIO. 
+
+**Learnings:**
+* I run into issues because it seems like the session ID (SID) keeps changing. It changes on form submit. Doing return false;
+seemed to fix it, but it keeps coming back so there's something more fundamental I don't understand about sessions/sockets.
+Reading the code on managing sessions and the documentation to understand it better. This was helpful to understand what a request is in flask: https://flask.palletsprojects.com/en/2.2.x/reqcontext/
+and why I could only make request.sid work with the @socket.on decorator, i.e. only when there's an actual request.
+* https://stackoverflow.com/questions/67463562/flask-socket-io-returns-different-sid-each-request
+* https://stackoverflow.com/questions/14849188/constant-flask-session-ids this was also helpful for understanding SIDs
+* https://stackoverflow.com/questions/15156132/flask-login-how-to-get-session-id
+* Found this that warns to not use socket-io SIDs as IDs since they are ephemeral... https://socket.io/docs/v4/client-socket-instance/ 
+* The best solution seems to have the unique identifier as a cookie on the client-side.  
 
 **Project** https://github.com/mauritz2/arboretum
 
