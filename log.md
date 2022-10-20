@@ -233,5 +233,27 @@ and why I could only make request.sid work with the @socket.on decorator, i.e. o
 
 **Project** https://github.com/mauritz2/arboretum
 
+### Day 14: October 20, 2022
+
+**Today's Progress**: Continued learning about Socket-IO and Flask-SocketIO. 
+
+**Learnings:**
+* Fixed the issue with the changing SID by making Flask put a cookie in the browser that I use to map to the player names.
+That mapping is stored in sessions["uids"] and can be retrieved through sessions.get["uids"]. However, whenever I navigate to a new page
+all the session variables disappear... It's not clear to me why. This was helpful in understanding Flask sessions https://overiq.com/flask-101/sessions-in-flask/
+I might need to go to Flask-Sessions and move to server-side sessions or something. Because something odd seems to be happening at the
+client side that keeps re-setting the session.
+* This seems to indicate that there are two sessions: one for HTML and one for Flask-SocketIO https://blog.miguelgrinberg.com/post/flask-socketio-and-the-user-session
+This post also seems to indicate that the best solution is server-side sessions. That's what I'll try next.
+* Update: That fixed it! Setting cookies and server-side sessions is the way to go.
+* JSON.parse() in JS is pretty useful. It can turn the str "true" into the boolean true. Better than eval(my_bool) which is a security risk
+* When telling Jquery to listen for submit at class "test", "test" has to exist. So if I'm dynamically adding HTML
+elements, then I need to add the listener after they exist. The listener is not applied at runtime.
+
+**Project** https://github.com/mauritz2/arboretum
+
+
+
+
 
 
