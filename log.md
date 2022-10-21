@@ -252,6 +252,26 @@ elements, then I need to add the listener after they exist. The listener is not 
 
 **Project** https://github.com/mauritz2/arboretum
 
+### Day 15: October 21, 2022
+
+**Today's Progress**: Continued re-building the Arboretum web app using Socket-IO and Flask-SocketIO. 
+
+**Learnings:**
+* Going to re-build so that there's a single update board state event to be emitted. Sending too many emits back and forth is very bug prone and hard to troubleshoot.
+This emit from the server-side will contain all the needed data to refresh the board (e.g. cards, current player etc.). It will be sent back
+every time the client-side performs an action (e.g. emit(draw card) etc.)
+* I'm very glad I built with normal app routes first before socketio. Almost all app routes have to be changed to socketio.on() routes
+now. But now that I understand how socketio works, it will be much easier to build it from scratch with socketio() next time.
+Also interested in learning React, I think that will be my next project. There must be an easier way to deal with all this client-side JS.
+* Keep forgetting: HTML elements need to be created before they can be referenced. Jquery won't throw an error, the selector just won't find anything.
+* Getting some unexpected behavior from my global var that keeps track of the mapping between the cookie IDs and player names.
+I thought I could use global vars for development, but seems like everyone is saying Redis is much better so will implement that for global data and see if it works.
+* Getting Redis to run on Windows is a bit tricky. Settled for a solution where I'm not even using server sessions anymore. Just a cookie and a global var.
+It's stable now and managed to make each player take their turn. The app feels so much nicer now that it doesn't have to refresh the page on each action. The only thing that requires a refresh
+now is the board. Will build it out on Monday to update through socket emits and JS.
+
+**Project** https://github.com/mauritz2/arboretum
+
 
 
 
