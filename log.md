@@ -275,20 +275,20 @@ now is the board. Will build it out on Monday to update through socket emits and
 
 ### Day 16: October 24, 2022
 
-**Today's Progress**: Continued re-building the Arboretum web app using Socket-IO and Flask-SocketIO. 
+**Today's Progress**: Did a first complete version of the Arboretum app using Socket-IO - multiple players can now play through an entire game 
 
 **Learnings:**
 * To loop through keys in a JS dict you can use Object.keys(my_dict). E.g. 
 ```
-for(const key in Object.keys(my_dict){
+for(const key of Object.keys(my_dict){
 console.log(key))
 }
 ```
 * onsubmit="return false" on a < form > prevents page refresh on page submit
-* A dict in JS can have integer keys, but they will be converted to string
+* A dict in JS can have integer keys, but they will be converted to strings
 * ```Array.from()``` can be used to turn another datastructure into an array in JS
 * HTTP status code 400 is the server complaining that the client sent it a request it doesn't understand
-* There's a big difference between ```key IN Object.keys()``` and ```key OF Object.keys()```. keys of Object.keys() returns the expected keys, the other just an index starting from 9
+* There's a big difference between ```key IN Object.keys()``` and ```key OF Object.keys()```. keys of Object.keys() returns the expected keys, the other just an index starting from 0
 * The code below results in logging undefined. Not passing a value for a parameter results in that param being "undefined" in JS. There's no error :-)
 ```
 my_func()
