@@ -275,7 +275,8 @@ now is the board. Will build it out on Monday to update through socket emits and
 
 ### Day 16: October 24, 2022
 
-**Today's Progress**: Did a first complete version of the Arboretum app using Socket-IO - multiple players can now play through an entire game 
+**Today's Progress**: Did a first complete version of the Arboretum app using Socket-IO - multiple players can now play 
+through an entire game 
 
 **Learnings:**
 * To loop through keys in a JS dict you can use Object.keys(my_dict). E.g. 
@@ -304,8 +305,16 @@ console.log(!my_bool);
 
 **Project** https://github.com/mauritz2/arboretum
 
+### Day 17: October 25, 2022
 
+**Today's Progress**: Re-factoring and updating the design to make it look better 
 
+**Learnings:**
+* Shortcut for multiple cursors in PyCharm: (1) select all rows, (2) shift + alt + g. Then use home and end to go to start and end of line.
+* It's possible to fade in text using CSS @keyframes. Very useful for a game.
+* Running into module error issues after re-factoring the folder structure. This was helpful: https://stackoverflow.com/questions/50745094/modulenotfounderror-when-running-script-from-terminal. This helped resolve the issue. 
+* If your flask app file is called app.py you don't have to specify  ```flask --app {name} run```. You can just do ```flask run```.
+* Aligning images and text in bootstrap requires ```d-flex justify-content-center text-center```
 
-
+**Project** https://github.com/mauritz2/arboretum
 
