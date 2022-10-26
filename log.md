@@ -318,3 +318,16 @@ console.log(!my_bool);
 
 **Project** https://github.com/mauritz2/arboretum
 
+### Day 18: October 26, 2022
+
+**Today's Progress**: Very short session. Tried to fix a bug where zoomed images get put behind other images in a weird way.
+
+**Learnings:**
+* Seems like each < td > in a table gets its own z-index (or equivalent). So when I zoom (i.e. scale up one < td >)
+it gets put ABOVE all the tds that were rendered before the scaling < td > and BELOW all the ones that were rendered after.
+Have tried to remediate this by setting the z-index of cells etc. but haven't been able to fix it.
+May need to re-build the zoom-functionality into something better. E.g. maybe a text pop-up of what the card is?
+Definitely less elegant though. Would prefer if the image just got bigger.
+
+**Project** https://github.com/mauritz2/arboretum
+
