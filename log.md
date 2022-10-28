@@ -331,3 +331,28 @@ Definitely less elegant though. Would prefer if the image just got bigger.
 
 **Project** https://github.com/mauritz2/arboretum
 
+
+### Day 19: October 27, 2022
+
+**Today's Progress**: Continued final touches on the web app
+
+**Learnings:**
+* Finally fixed the issue with overlapping < td >s. Setting the < td > to ```position:relative``` and the z-index of the < td > to 1, but 2 on :hover fixed it.
+Setting the z-index on the zoom class I use to apply the zoom didn't work. It has to be on the td itself for some reason. I should look more into ```position:relative;```, ```position:absolute;``` etc.
+to understand it better.
+* Seems like static methods are an accident in Python and shouldn't really be used, interesting. (1) https://www.webucator.com/article/when-to-use-static-methods-in-python-never/, (2) https://testing.googleblog.com/2008/12/static-methods-are-death-to-testability.html
+
+**Project** https://github.com/mauritz2/arboretum
+
+### Day 28: October 28, 2022
+
+**Today's Progress**: Continued final touches on the web app
+
+**Learnings:**
+* Looking into how to set jQuery event listener on dynamically created DOM elements. It works  if I set the event listener in the same function as the element is created, but otherwise it doesn't work.
+Apparently the event listener has a "selector" parameter as described here. But can't make that work. Maybe because my selector is nested multiple steps down from the parent. https://stackoverflow.com/questions/203198/event-binding-on-dynamically-created-elements
+* Update: I tried it again but I set the event listener to ```$(document).on("submit", ".my_class", function(){...``` and now it works! This will make the code cleaner since the event listeners can be broken out.
+* You can do both ```Object.keys()``` and ```Object.values()``` on an Object (i.e. dict). ```Object.entries()``` is similar to enumerate in Python
+
+**Project** https://github.com/mauritz2/arboretum
+
