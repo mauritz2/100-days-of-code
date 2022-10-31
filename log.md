@@ -344,7 +344,7 @@ to understand it better.
 
 **Project** https://github.com/mauritz2/arboretum
 
-### Day 28: October 28, 2022
+### Day 20: October 28, 2022
 
 **Today's Progress**: Continued final touches on the web app
 
@@ -353,6 +353,22 @@ to understand it better.
 Apparently the event listener has a "selector" parameter as described here. But can't make that work. Maybe because my selector is nested multiple steps down from the parent. https://stackoverflow.com/questions/203198/event-binding-on-dynamically-created-elements
 * Update: I tried it again but I set the event listener to ```$(document).on("submit", ".my_class", function(){...``` and now it works! This will make the code cleaner since the event listeners can be broken out.
 * You can do both ```Object.keys()``` and ```Object.values()``` on an Object (i.e. dict). ```Object.entries()``` is similar to enumerate in Python
+
+**Project** https://github.com/mauritz2/arboretum
+
+
+### Day 21: October 31, 2022
+
+**Today's Progress**: Deployed Arboretum to AWS EC2. It's now officially done.
+
+**Learnings:**
+* Running a Flask app on host 0.0.0.0 makes it run on the public IP of the server.
+* By default, an EC2 instance doesn't allow inbound traffic. I had to create a new inbound traffic security group for TCP.
+* Not sure why, but locally I could find "my_folder/oak 1.png" using the path "my_folder/Oak 1.png". But when deployed to EC2 on Ubuntu, the paths
+became case-sensitive. To keep in mind going forward: make all paths lower case.
+* Using WinSCP was the easiest way to transfer data to the EC2 instance.
+* Had to use PowerShell to run ssh-add to add the private key to connect to the EC2 instance. Doesn't seem like it's supported in the default console.
+* ```app.debug = True``` doesn't work when with socketio. But running ```flask --debug run``` works.
 
 **Project** https://github.com/mauritz2/arboretum
 
