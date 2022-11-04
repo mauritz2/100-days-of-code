@@ -461,8 +461,6 @@ console.log(`My favorite fruit is ${fav_fruit}`)
 **Today's Progress**: Decided to start building a running plan tracker for 80/20 training plans using React
 
 **Learnings:**
-* Figma is very good for web design
-* Switching to VS Code for this project
 * Ctrl + L to select a row in VS Code
 * Somehow when running json-server, doing 127.0.0.1:3000/data doesn't work. But localhost:3000/data does work.
 * To set a bottom border, do ```bottom-border: solid;``` To reduce the width of the border do ```border-width: 0.5px;```
@@ -491,9 +489,10 @@ display:grid;
 grid-template-columns: repeat(9, 1fr);
 ```
 * Store anything that's not used at compile in the "public" folder, i.e. favicons. Any images used in compile, e.g. within components, should be in src
-* It's not possible to use for loops as part of the return statement in a React component. Do the for loop outside of the return, e.g. push to a list and then call it in the return through {my_list}: https://stackoverflow.com/questions/22876978/loop-inside-react-jsx
+* It's not possible to use loops as part of the return statement in a React component. Do the for loop outside of the return, e.g. push to a list and then call it in the return through {my_list}: https://stackoverflow.com/questions/22876978/loop-inside-react-jsx
 * It's possible to cause infinite rendering loops in React https://alexsidorenko.com/blog/react-infinite-loop/. Need to be smart about how to update state.
-* ```fetch``` is always https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch. Therefore it will always return a promise. I.e. as soon as fetch is called the next line of code will execute (in the absence of await). Get the value of promises using ```then()```.
-* Synch fetch is asynch components will start rendering before it completes. It's possible to return null if a Prop has .length 0. This prevents the component from failing. Better way is to await the fetch somehow.
-* If you don't pass in [] as the second parameter to ```useEffect``` an infinite loop is created :-)
-* 
+* ```fetch``` is always async https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch. Therefore it will always return a promise. I.e. as soon as fetch is called the next line of code will execute (in the absence of await). Get the value of promises using ```then()```.
+* Components will start rendering before fetch completes. It's possible to return null if a Prop has .length 0. This prevents the component from failing. Better way is to await the fetch somehow.
+* If you don't pass in [] as the second parameter to ```useEffect``` an infinite loop is created
+* The default value in useState({value}) can matter a lot. E.g. browser will throw an error that map doesn't exist if the default value isn't []
+
