@@ -372,3 +372,128 @@ became case-sensitive. To keep in mind going forward: make all paths lower case.
 
 **Project** https://github.com/mauritz2/arboretum
 
+### Day 21: November 1, 2022
+
+**Today's Progress**: Spent today learning more about CSS and React.
+
+**Learnings:**
+* My next project I won't use Bootstrap. I want to learn CSS at a more fundamental level.
+* CSS has two layout systems: Flexbox and Grid.
+* #### Flexbox
+  * Flexbox: can result in horizontal scrolling. Unless you do ```flex-wrap: wrap;```
+  * By default, a flexbox container is a row. And all children are columns.
+  * The columns are independent of each other.
+  * In flexbox you often have to reference the children (i.e. specific rows) and specify their behavior. In grid you mostly don't do this.
+  * Good for navigation bars (by default each column is as big as it needs to be - i.e. intrinsic sizing)
+* #### Grid
+  * The default grid container adds rows. Can be changed through  ```grid-auto-flow: column;```. Then it behaves very
+  similar to flexbox. 
+  * ``` grid-template-columns: repeat(4, 1fr);``` creates four columns 
+  * The grid sets things up in a 2D grid from the start, e.g. columns can stretch to match columns around it
+  * Excels when you need a rigid system from the parent (i.e. no intrinsic sizing)
+* Conclusion: Grid is a rigid structure you can plug content into. Flexbox is when the content determines box size.
+* You can mix flexbox and grid together.
+* Grid is easier to get started with (allegedly). More properties are needed. But it's more obvious.
+* #### Absolute vs. Relative
+  * Absolute = you can set the exact position and the rest of the elements will ignore this element when positioning.
+  * Absolute will look for a parent that has a position = relative. If there is none, it will default to being relative to tbe body.
+  * If you do top:0; bottom 0; it will by default be relative to the body, but if you have a parent with relative it's now relative to that parent.
+  * If you have absolute you can use z-index on it.
+  * If you need to add a z-index on an element that should stay in the line of the flow of the DOM you can apply ```position:relative;```. 
+  * Without a value for the position property, the z-index doesn't work. This explains why the z-index didn't work with the cards in Arboretum.
+* #### CSS Specificity
+  * The last CSS specification wins. E.g. if you define the body text color multiple times the last one in the document is applied.
+  * Specificity order: inline styles > IDs > classes > elements. Never use inline styles, it gets too messy.
+  * Do not use !important.
+* #### Media queries
+  * Media queries(```@media() {}```) are rules for when CSS selectors should apply (e.g. based on screen width)
+  * Make sure that Media queries come AFTER the selectors that you want to overwrite. The latest selector wins in CSS.
+  * Media queries can apply on orientation (e.g. portrait and landscape) or how things should look on screen or print.
+* #### React
+  * Can't use ```class``` in React (JSX). Have to use ```className```.  
+  * JSX elements can only have one element (i.e. everything needs to be wrapped in a <div> or similar).
+  * Component.propTypes {} can be used as type hinting. The IDE will flag if the wrong type is used.
+  * useState isn't mutable - its one-way data. When useState is defined, you define the state but also the func to call to change the state. E.g. as below:
+  ```
+    const [recipies, setRecipies] = useState({initial_state})
+    ```
+  * If you don't want to wrap a React component in a div or similar it supports having ```<>``` and ```</>```.
+  * package.json holds all the dependencies. Running npm -i {package} automatically adds it to this file.
+
+
+### Day 22: November 2, 2022
+
+**Today's Progress**: Continued on the React tutorial
+
+**Learnings:**
+* To filter out data with ID 5
+```
+tasks.filter(task) => task.id !== 5
+```
+* If you're passing a function to a component, pass it as ```myFunc```, not ```myFunc()```
+* The spread operator can be used to set a specific variable in an object:
+```
+recipies.map((recipie) => recipie.id === 1111 ? {... recipie, tasty: true} : recipie
+```
+* Remember to pass all Props as objects, e.g. ```({onCreate})``` as opposed to ```(onCreate)```
+* If you don't care about the else in a ternary statement it's possible to use ```{my_bool && whatToDoIfTrue}```
+* ```npm build``` creates the production build. It creates what to deploy in the build folder.
+* json-server can be used to mock a backend when developing React apps.
+* useEffect in React can be used to make things happen on page load.
+* Add ```headers {}``` in plural to a POST request, not ```header {}```.
+* The ```react-router-dom``` package is used in React for routing.
+* To prevent page refresh when navigating to a new page, import Link from react-router-dom through ```import {Link} from "react-router-dom"```.
+Then replace the ```<a>``` tag with ```<Link>``` and the ```href``` with ```to```. 
+* In order to hide elements on certain pages, import useLocation through ```import {useLocation} from "react-router-dom"```.
+In the component you can find the current route through ```const location = useLocation()``` and then check ```location.pathname === "/"```
+to hide/show components.
+* To get an f-string equivalent in JS: use a "backtick" (i.e. `) together with ${var} as below:
+```
+const fav_fruit = "Banana"
+console.log(`My favorite fruit is ${fav_fruit}`)
+```
+* Changes to package.json don't apply until the server is re-started
+* useState returns a getter and a setter
+* When using React with a Flask backend - set a "proxy" in the package.json to the Flask API endpoint. Any fetch() request will be redirected to the Flask API.
+
+### Day 23: November 4, 2022
+
+**Today's Progress**: Decided to start building a running plan tracker for 80/20 training plans using React
+
+**Learnings:**
+* Figma is very good for web design
+* Switching to VS Code for this project
+* Ctrl + L to select a row in VS Code
+* Somehow when running json-server, doing 127.0.0.1:3000/data doesn't work. But localhost:3000/data does work.
+* To set a bottom border, do ```bottom-border: solid;``` To reduce the width of the border do ```border-width: 0.5px;```
+* The basic React component syntax is 
+```
+import React from "react"
+
+const MyComponent = () => {
+  return (
+
+  )
+}
+export default My Component
+```
+* To duplicate a line in VS Code: ```Shift + Alt + Down```
+* To comment out a row: ```Shift + Alt + A```
+* All the props I was passing to a component came out as undefined. Making the props into state using useState, setting the state, and then passing the state as prop solved the issue. Not exactly sure why. Maybe it's not possible to just pass a variable as a prop, you can only pass state?
+* .map() is essentially a python for loop:
+```
+my_array = ["Banana", "Apple", "Pineapple"];
+my_array.map(fruit => console.log(fruit));
+```
+* To set up a grid with 7 columns:
+```
+display:grid;
+grid-template-columns: repeat(9, 1fr);
+```
+* Store anything that's not used at compile in the "public" folder, i.e. favicons. Any images used in compile, e.g. within components, should be in src
+* It's not possible to use for loops as part of the return statement in a React component. Do the for loop outside of the return, e.g. push to a list and then call it in the return through {my_list}: https://stackoverflow.com/questions/22876978/loop-inside-react-jsx
+* It's possible to cause infinite rendering loops in React https://alexsidorenko.com/blog/react-infinite-loop/. Need to be smart about how to update state.
+* ```fetch``` is always https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch. Therefore it will always return a promise. I.e. as soon as fetch is called the next line of code will execute (in the absence of await). Get the value of promises using ```then()```.
+* Synch fetch is asynch components will start rendering before it completes. It's possible to return null if a Prop has .length 0. This prevents the component from failing. Better way is to await the fetch somehow.
+* If you don't pass in [] as the second parameter to ```useEffect``` an infinite loop is created :-)
+* 
