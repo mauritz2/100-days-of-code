@@ -216,7 +216,7 @@ Adding ```return false;``` at the end of the function that runs on form submit f
 
 
 
-### Day 13: October 19, 2022
+### Day 14: October 19, 2022
 
 **Today's Progress**: Continued learning about Socket-IO and Flask-SocketIO. 
 
@@ -233,7 +233,7 @@ and why I could only make request.sid work with the @socket.on decorator, i.e. o
 
 **Project** https://github.com/mauritz2/arboretum
 
-### Day 14: October 20, 2022
+### Day 15: October 20, 2022
 
 **Today's Progress**: Continued learning about Socket-IO and Flask-SocketIO. 
 
@@ -252,7 +252,7 @@ elements, then I need to add the listener after they exist. The listener is not 
 
 **Project** https://github.com/mauritz2/arboretum
 
-### Day 15: October 21, 2022
+### Day 16: October 21, 2022
 
 **Today's Progress**: Continued re-building the Arboretum web app using Socket-IO and Flask-SocketIO. 
 
@@ -273,7 +273,7 @@ now is the board. Will build it out on Monday to update through socket emits and
 **Project** https://github.com/mauritz2/arboretum
 
 
-### Day 16: October 24, 2022
+### Day 17: October 24, 2022
 
 **Today's Progress**: Did a first complete version of the Arboretum app using Socket-IO - multiple players can now play 
 through an entire game 
@@ -305,7 +305,7 @@ console.log(!my_bool);
 
 **Project** https://github.com/mauritz2/arboretum
 
-### Day 17: October 25, 2022
+### Day 18: October 25, 2022
 
 **Today's Progress**: Re-factoring and updating the design to make it look better 
 
@@ -318,7 +318,7 @@ console.log(!my_bool);
 
 **Project** https://github.com/mauritz2/arboretum
 
-### Day 18: October 26, 2022
+### Day 19: October 26, 2022
 
 **Today's Progress**: Very short session. Tried to fix a bug where zoomed images get put behind other images in a weird way.
 
@@ -332,7 +332,7 @@ Definitely less elegant though. Would prefer if the image just got bigger.
 **Project** https://github.com/mauritz2/arboretum
 
 
-### Day 19: October 27, 2022
+### Day 20: October 27, 2022
 
 **Today's Progress**: Continued final touches on the web app
 
@@ -344,7 +344,7 @@ to understand it better.
 
 **Project** https://github.com/mauritz2/arboretum
 
-### Day 20: October 28, 2022
+### Day 21: October 28, 2022
 
 **Today's Progress**: Continued final touches on the web app
 
@@ -357,7 +357,7 @@ Apparently the event listener has a "selector" parameter as described here. But 
 **Project** https://github.com/mauritz2/arboretum
 
 
-### Day 21: October 31, 2022
+### Day 22: October 31, 2022
 
 **Today's Progress**: Deployed Arboretum to AWS EC2. It's now officially done.
 
@@ -372,7 +372,7 @@ became case-sensitive. To keep in mind going forward: make all paths lower case.
 
 **Project** https://github.com/mauritz2/arboretum
 
-### Day 21: November 1, 2022
+### Day 23: November 1, 2022
 
 **Today's Progress**: Spent today learning more about CSS and React.
 
@@ -421,7 +421,7 @@ became case-sensitive. To keep in mind going forward: make all paths lower case.
   * package.json holds all the dependencies. Running npm -i {package} automatically adds it to this file.
 
 
-### Day 22: November 2, 2022
+### Day 24: November 2, 2022
 
 **Today's Progress**: Continued on the React tutorial
 
@@ -456,7 +456,7 @@ console.log(`My favorite fruit is ${fav_fruit}`)
 * useState returns a getter and a setter
 * When using React with a Flask backend - set a "proxy" in the package.json to the Flask API endpoint. Any fetch() request will be redirected to the Flask API.
 
-### Day 23: November 4, 2022
+### Day 25: November 4, 2022
 
 **Today's Progress**: Decided to start building a running plan tracker for 80/20 training plans using React
 
@@ -496,14 +496,14 @@ grid-template-columns: repeat(9, 1fr);
 * If you don't pass in [] as the second parameter to ```useEffect``` an infinite loop is created
 * The default value in useState({value}) can matter a lot. E.g. browser will throw an error that map doesn't exist if the default value isn't []
 
-### Day 24: November 5, 2022
+### Day 26: November 5, 2022
 
 **Today's Progress**: Continued building the running plan React app
 
 **Learnings:**
 * some() is the equivalent of any() in Python
 
-### Day 25: November 7, 2022
+### Day 27: November 7, 2022
 
 **Today's Progress**: Continued building the running plan React app
 
