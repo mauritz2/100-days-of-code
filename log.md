@@ -503,7 +503,7 @@ grid-template-columns: repeat(9, 1fr);
 **Learnings:**
 * some() is the equivalent of any() in Python
 
-### Day 24: November 7, 2022
+### Day 25: November 7, 2022
 
 **Today's Progress**: Continued building the running plan React app
 
