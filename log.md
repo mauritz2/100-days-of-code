@@ -496,3 +496,16 @@ grid-template-columns: repeat(9, 1fr);
 * If you don't pass in [] as the second parameter to ```useEffect``` an infinite loop is created
 * The default value in useState({value}) can matter a lot. E.g. browser will throw an error that map doesn't exist if the default value isn't []
 
+### Day 24: November 5, 2022
+
+**Today's Progress**: Continued building the running plan React app
+
+**Learnings:**
+* some() is the equivalent of any() in Python
+
+### Day 24: November 7, 2022
+
+**Today's Progress**: Continued building the running plan React app
+
+**Learnings:**
+* ``` display: inline``` means elements that would normally line break won't, e.g. < p > elements. Width and height cannot be set for inline items.  ``` display: inline``` means the opposite. The element will take the full width. But you can set its width and height. ``` display: inline-block``` is an inline element for which width and height can be set.
