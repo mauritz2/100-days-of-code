@@ -509,3 +509,11 @@ grid-template-columns: repeat(9, 1fr);
 
 **Learnings:**
 * ``` display: inline``` means elements that would normally line break won't, e.g. < p > elements. Width and height cannot be set for inline items.  ``` display: inline``` means the opposite. The element will take the full width. But you can set its width and height. ``` display: inline-block``` is an inline element for which width and height can be set.
+
+### Day 28: November 8, 2022
+
+**Today's Progress**: Continued building the running plan React app, mainly worked on layout and CSS. Finished draft of main workout plan view. Started on routing to other screens.
+
+**Learnings:**
+* If adding a class && as a ternary doesn't work because it will add "false" as the class name. Better to use ? and then : "" to make sure it doesn't add anything extra as a class.
+* 
