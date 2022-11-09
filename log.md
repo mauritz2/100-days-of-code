@@ -516,4 +516,29 @@ grid-template-columns: repeat(9, 1fr);
 
 **Learnings:**
 * If adding a class && as a ternary doesn't work because it will add "false" as the class name. Better to use ? and then : "" to make sure it doesn't add anything extra as a class.
-* 
+* both return() and render() can be used to create DOM elements within a component. render() is
+for writing React components wth class methods. I should use return().
+
+### Day 29: November 9, 2022
+
+**Today's Progress**: Continued building the running plan React app, building new component for plan selection
+
+**Learnings:**
+* Side effect examples in React: fetching data, setting up a subscription, manually changing the DOM in React
+* useEffect is similar to ComponentDidMount, componentDidUpdate, and componentWillUnmount combined
+* There are two types of side effects in React: those that require cleanup and those that don't
+* Without cleanup = we can run them and forget. Example: logging, network requests, manual DOM mutations. The render() method should NOT cause side effects in React class components.Generally you want to run the side effects after you've updated the DOM. That's why side effects are put into componentDidMount and componentDidUpdate.
+* However, one draw back is that you often have to put the same sideeffect in componentDidMount and componentDidUpdate since you want to do the same thing on component create and update.
+* useEffect means that you want React to do something after renders.... This explains all the issues I was running into when the DOM was relying on variables that existed within useEffect. The DOM can't rely on stuff in useEffect for an initial render. 
+* By default, React will REMEMBER what you put into useEffect and run it after the DOM is rendered. 
+* Example of side effect that requires a cleanup: setting up a subscription to an external data source. In that case we need to clean up so we don't introduce a memory leak.
+* ```./``` indicates same folder. So import ./Button if the Button component is the same folder as the file that's importing it
+* State of children should be managed at the parent level
+* ```onClick={onViewClick()}``` will automatically call the function on render! To resolve do ```onClick={ () => onViewClick()}```
+* To make certain rows in a grid different width: create a new class called wide or similar. Apply to to the cell. Then experiment with
+```grid-column: 2/5;```
+* So funny... the reason ```localhost:3000``` would work but ```127.0.0.1:3000``` would not is because my browser is resolving localhost to IPV6. Doing ```[::1]:3000``` works
+* PUT vs. POST: PUT ensures idempotence, meaning that the same PUT call has the same effect. x = 5 is idempotent. x ++ is not idempotent. If idempotence is needed, use PUT. Otherwise, POST. 
+* According to Google, dashses are preferred over underscores in URLs
+* Running into issues because PUT and DELETE requires an ID in json-server, otherwise they'll return 404 does not exist even if there's something there. Will have to re-define API
+so there's an API for current-plan, even though there's just a single element there.
