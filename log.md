@@ -542,3 +542,13 @@ for writing React components wth class methods. I should use return().
 * According to Google, dashses are preferred over underscores in URLs
 * Running into issues because PUT and DELETE requires an ID in json-server, otherwise they'll return 404 does not exist even if there's something there. Will have to re-define API
 so there's an API for current-plan, even though there's just a single element there.
+
+### Day 29: November 9, 2022
+
+**Today's Progress**: Continued building the running plan React app, finishing plan selection first pass and doing first pass of heartrate zone setup
+
+**Learnings:**
+* Use Math.round() to round a number
+* readonly within an < input> tag makes the text read-only, but it's still selectable
+* If somethinng is defined as a component state, the component will re-render every time on state change
+* If a Component will mount/unmount, consider where the state will live because it won't persist. Options: store in parent or some type of local storage. 
