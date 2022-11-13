@@ -552,3 +552,33 @@ so there's an API for current-plan, even though there's just a single element th
 * readonly within an < input> tag makes the text read-only, but it's still selectable
 * If somethinng is defined as a component state, the component will re-render every time on state change
 * If a Component will mount/unmount, consider where the state will live because it won't persist. Options: store in parent or some type of local storage. 
+
+### Day 30: November 13, 2022
+
+**Today's Progress**: Created a script to generate secret santa matchings
+
+**Learnings:**
+* Full script:
+```
+import pathlib 
+import random
+# Config
+people = ["Person A", "Person B", "Person C"]
+
+# Generate secret santa pairs and write to .txt
+base_path = pathlib.Path(__file__).parent
+to_receive_gifts = people.copy()
+to_give_gifts = people.copy()
+
+for person_to_give in to_give_gifts:
+    person_to_receive = random.choice(to_receive_gifts)
+    
+    while person_to_receive == person_to_give:
+        person_to_receive = random.choice(to_receive_gifts)
+    
+    to_receive_gifts.remove(person_to_receive)
+    file_name = f"Till {person_to_give}.txt"
+    with open(base_path / file_name, "w") as f:
+        msg = f"Hej {person_to_give} : du är secret santa till {person_to_receive}"
+        f.write(msg)
+```
