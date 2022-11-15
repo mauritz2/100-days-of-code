@@ -582,3 +582,14 @@ for person_to_give in to_give_gifts:
         msg = f"Hej {person_to_give} : du är secret santa till {person_to_receive}"
         f.write(msg)
 ```
+* then() doens't resolve a promise into a value, it just returns a new promise
+* ```() => x``` is short for ```() => { return x; }```. That's why it syntax complains when adding {} sometimes after then()
+* "If the previous handler started a promise but did not return it, there's no way to track its settlement anymore, and the promise is said to be "floating" [...] Therefore, as a rule of thumb, whenever your operation encounters a promise, return it and defer its handling to the next then handler.
+* .json() is asyncronous because the fetch() call only reads the headers. To parse the body as JSON you need .json(), which is defined asyncornously since you're still reading an incoming request. The parsing of the data isn't asynchronous, just the retrieving of the data.
+
+### Day 30: November 15, 2022
+
+**Today's Progress**: Continued on the React running app
+
+**Learnings:**
+* There's something I don't understand about return data after a fetch. It always returns a promise, even when it looks like the then()s are chained correctly. The thing that always works is setting the state at the inner-most loop. 
