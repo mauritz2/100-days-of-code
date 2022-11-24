@@ -593,3 +593,16 @@ for person_to_give in to_give_gifts:
 
 **Learnings:**
 * There's something I don't understand about return data after a fetch. It always returns a promise, even when it looks like the then()s are chained correctly. The thing that always works is setting the state at the inner-most loop. 
+
+### Day 31: November 24, 2022
+
+**Today's Progress**: Back from some time travelling without a laptop. Watched some videos on CSS and continued on the running app. First pass at the app using json-server is close to done.
+
+**Learnings:**
+* CSS properties
+  * ```line-height``` sets the height between lines. The default in most browsers seems to be around 1.1-1.4. Headers can look much better with a lower line-height. Parragraphs can look better with a larger line height.
+  * ```gap``` can be used in a grid to easily create space between cells
+  * ```is()``` and ```where()``` applies CSS to all the items in a list of selector. Used to write more compect CSS.
+  * The HTML attribute ```srcset``` is used to dynamically change images based on media queries
+* Updating a specific value at a URL is not easily done in REST. But one way to do it is through PATCH. The most common pattern is to do a GET, update the object, and then PUT it back. This was helpful: https://www.mnot.net/blog/2012/09/05/patch. Apparently JSON Merge Patch can also be used (?)
+* 
