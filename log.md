@@ -605,4 +605,40 @@ for person_to_give in to_give_gifts:
   * ```is()``` and ```where()``` applies CSS to all the items in a list of selector. Used to write more compect CSS.
   * The HTML attribute ```srcset``` is used to dynamically change images based on media queries
 * Updating a specific value at a URL is not easily done in REST. But one way to do it is through PATCH. The most common pattern is to do a GET, update the object, and then PUT it back. This was helpful: https://www.mnot.net/blog/2012/09/05/patch. Apparently JSON Merge Patch can also be used (?)
-* 
+* I keep forgetting the [] after useEffect, which causes infinite loops
+* Flask-Migrate is a Flask adaptation of Alembic. Alembic is a database migration tool for SQLAlchemy.
+* Seems like Flask runs better with venv than Conda. I get module not found errors with ```flask run```. Flask run doesn't seem to run within the conda env. Never resolved here https://stackoverflow.com/questions/59021000/flask-flask-run-not-working-in-conda-environment-windows-python-3-8-conda
+
+### Day 32: November 25, 2022
+
+**Today's Progress**: Focusing on buliding out the Flask backend for the running app
+
+**Learnings:**
+* Refresher on OSI: Physical (bits), Data Link (frame), Network (packets), Transport (segment), Session (data), Presentation (data), Application (data)
+* Four layers: Database layer, Persistence layer, Business layer, Presentation layer
+* If your ```app.route("/url")``` is missing a trailing slash, Werkzeug will interpret that as that it should not match the URL if a user enters a trailing slash. You can also use ```strict_slahes=False```. Flask doesn't recommend disabling this though.
+* Triple slash in a URI references localhost. E.g. ```"sqlite:///database.db"``` references localhost/database.db. Apparently Tim Berners-Lee regrets this triple slash: https://superuser.com/questions/352133/why-do-file-urls-start-with-3-slashes
+
+### Day 33: November 27, 2022
+
+**Today's Progress**: Continued on building out the Flask backend for the running app
+
+**Learnings:**
+* Geting Flask application context errors when trying to populate the database with a script.
+* To keep track of application-level data, Flask accesses current_app and g. This is to avoid having to pass the application around to each function. 
+* ```current_app``` points to the application handling the current activity
+* Flask automatically pushes an application context when handling a request so that the view functions, error handlers, and other functions have access to ```current_app```. Flask also pushes an app context when running Flask CLI commands.
+* Typically the app context has the same lifetime as a request.
+* If you try to reference ```current_app``` outside of an application context, you get the error message that I'm getting. If you have direct access to the app, which I have, it's possible to manually push the app context. This command seems to fix the issue: ```app.app_context().push()```
+* The g object is used to store data in the application context. The g namespace object has the smae lifetime as an application context. Data in g is lost after the context ends. So it can't be used to store data between requests. Sessions and databases are used to store data between requests. Example of what to store in g: database connection. 
+* Flask-Marshmallow is used to JSON serialize the result of Flask-SQLAlchemy queries. Pretty convenient. 
+* Define a Marshmallow Schema by 
+```
+class MyModelSchema(ma.Schemma):
+class Meta:
+  fields = ("id", "my", "fields")
+
+my_models_schema = MyModelsSchema(many=True)
+```
+* Then use ```my_models-schema.dump(my_sqlalchemy_return)``` to JSON serialize
+
