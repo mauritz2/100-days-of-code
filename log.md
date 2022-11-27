@@ -515,9 +515,8 @@ grid-template-columns: repeat(9, 1fr);
 **Today's Progress**: Continued building the running plan React app, mainly worked on layout and CSS. Finished draft of main workout plan view. Started on routing to other screens.
 
 **Learnings:**
-* If adding a class && as a ternary doesn't work because it will add "false" as the class name. Better to use ? and then : "" to make sure it doesn't add anything extra as a class.
-* both return() and render() can be used to create DOM elements within a component. render() is
-for writing React components wth class methods. I should use return().
+* If adding a class ```&&``` as a ternary doesn't work because it will add "false" as the class name. Better to use ```?``` and then ```: ""``` to make sure it doesn't add anything extra as a class.
+* Both ```return()``` and ```render()``` can be used to create DOM elements within a component. ```render()``` is for writing React components wth class methods. I should use ```return()```.
 
 ### Day 29: November 9, 2022
 
