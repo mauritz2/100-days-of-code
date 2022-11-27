@@ -521,41 +521,40 @@ for writing React components wth class methods. I should use return().
 
 ### Day 29: November 9, 2022
 
-**Today's Progress**: Continued building the running plan React app, building new component for plan selection
+**Today's Progress**: Continued building the running plan React app, building new component for plan selection.
 
 **Learnings:**
-* Side effect examples in React: fetching data, setting up a subscription, manually changing the DOM in React
-* useEffect is similar to ComponentDidMount, componentDidUpdate, and componentWillUnmount combined
-* There are two types of side effects in React: those that require cleanup and those that don't
-* Without cleanup = we can run them and forget. Example: logging, network requests, manual DOM mutations. The render() method should NOT cause side effects in React class components.Generally you want to run the side effects after you've updated the DOM. That's why side effects are put into componentDidMount and componentDidUpdate.
-* However, one draw back is that you often have to put the same sideeffect in componentDidMount and componentDidUpdate since you want to do the same thing on component create and update.
-* useEffect means that you want React to do something after renders.... This explains all the issues I was running into when the DOM was relying on variables that existed within useEffect. The DOM can't rely on stuff in useEffect for an initial render. 
+* Side effect examples in React: fetching data, setting up a subscription, manually changing the DOM in React.
+* ```useEffect``` is similar to ```ComponentDidMount```, ```componentDidUpdate```, and ```componentWillUnmount``` combined.
+* There are two types of side effects in React: those that require cleanup and those that don't.
+* Without cleanup = we can run them and forget. Example: logging, network requests, manual DOM mutations. The ```render()``` method should NOT cause side effects in React class components. Generally you want to run the side effects after you've updated the DOM. That's why side effects are put into ```componentDidMount``` and ```componentDidUpdate```.
+* However, one drawback is that you often have to put the same side effect in ```componentDidMount``` and ```componentDidUpdate``` since you want to do the same thing on component create and update.
+* ```useEffect``` means that you want React to do something after a component renders.... This explains all the issues I was running into when the DOM was relying on variables that existed within ```useEffect```. The DOM can't rely on stuff in ```useEffect``` for an initial render. 
 * By default, React will REMEMBER what you put into useEffect and run it after the DOM is rendered. 
 * Example of side effect that requires a cleanup: setting up a subscription to an external data source. In that case we need to clean up so we don't introduce a memory leak.
-* ```./``` indicates same folder. So import ./Button if the Button component is the same folder as the file that's importing it
-* State of children should be managed at the parent level
-* ```onClick={onViewClick()}``` will automatically call the function on render! To resolve do ```onClick={ () => onViewClick()}```
+* ```./``` indicates same folder. So import ```./Button``` if the Button component is the same folder as the file that's importing it.
+* State of children should be managed at the parent level.
+* ```onClick={onViewClick()}``` will automatically call the function on render! To resolve do ```onClick={ () => onViewClick() }```
 * To make certain rows in a grid different width: create a new class called wide or similar. Apply to to the cell. Then experiment with
 ```grid-column: 2/5;```
-* So funny... the reason ```localhost:3000``` would work but ```127.0.0.1:3000``` would not is because my browser is resolving localhost to IPV6. Doing ```[::1]:3000``` works
-* PUT vs. POST: PUT ensures idempotence, meaning that the same PUT call has the same effect. x = 5 is idempotent. x ++ is not idempotent. If idempotence is needed, use PUT. Otherwise, POST. 
-* According to Google, dashses are preferred over underscores in URLs
-* Running into issues because PUT and DELETE requires an ID in json-server, otherwise they'll return 404 does not exist even if there's something there. Will have to re-define API
-so there's an API for current-plan, even though there's just a single element there.
+* So funny... the reason ```localhost:3000``` would work but ```127.0.0.1:3000``` would not is because my browser is resolving localhost to IPV6. Doing ```[::1]:3000``` works.
+* ```PUT``` vs. ```POST```: ```PUT``` ensures idempotence, meaning that the same ```PUT``` call has the same effect. ```x = 5``` is idempotent. ```x ++``` is not idempotent. If idempotence is needed, use ```PUT```. Otherwise, ```POST```. 
+* According to Google, dashses are preferred over underscores in URLs.
+* Running into issues because ```PUT``` and ```DELETE``` requires an ID in json-server. If the ID isn't there they'll return 404 does not exist even if there's something there. Will have to re-define API so there's an ID for current-plan, even though there's just a single element there.
 
-### Day 29: November 9, 2022
+### Day 30: November 9, 2022
 
-**Today's Progress**: Continued building the running plan React app, finishing plan selection first pass and doing first pass of heartrate zone setup
+**Today's Progress**: Continued building the running plan React app, finishing plan selection first pass and doing first pass of heart rate zone setup.
 
 **Learnings:**
-* Use Math.round() to round a number
-* readonly within an < input> tag makes the text read-only, but it's still selectable
-* If somethinng is defined as a component state, the component will re-render every time on state change
-* If a Component will mount/unmount, consider where the state will live because it won't persist. Options: store in parent or some type of local storage. 
+* Use ```Math.round()``` to round a number in JS.
+* Adding the ```readonly``` attribute within an ```<input>``` tag makes the text read-only, but it's still selectable.
+* If somethinng is defined as a component state, the component will re-render on every state change.
+* If a component will mount/unmount, consider where its state will live because it won't persist. Options: store the state in the component's parent or some type of local storage. 
 
-### Day 30: November 13, 2022
+### Day 31: November 13, 2022
 
-**Today's Progress**: Created a script to generate secret santa matchings
+**Today's Progress**: Created a script to generate secret santa matchings.
 
 **Learnings:**
 * Full script:
@@ -582,34 +581,34 @@ for person_to_give in to_give_gifts:
         msg = f"Hej {person_to_give} : du är secret santa till {person_to_receive}"
         f.write(msg)
 ```
-* then() doens't resolve a promise into a value, it just returns a new promise
-* ```() => x``` is short for ```() => { return x; }```. That's why it syntax complains when adding {} sometimes after then()
+* ```then()``` doesn't resolve a promise into a value, it just returns a new promise.
+* ```() => x``` is short for ```() => { return x; }```. That's why I sometimes get syntax errors when adding ```{}``` after ```then()```
 * "If the previous handler started a promise but did not return it, there's no way to track its settlement anymore, and the promise is said to be "floating" [...] Therefore, as a rule of thumb, whenever your operation encounters a promise, return it and defer its handling to the next then handler.
-* .json() is asyncronous because the fetch() call only reads the headers. To parse the body as JSON you need .json(), which is defined asyncornously since you're still reading an incoming request. The parsing of the data isn't asynchronous, just the retrieving of the data.
+* ```.json()``` is asyncronous because the ```fetch()``` call only reads the headers. To parse the body as JSON you need ```.json()```, which is defined asyncornously since you're still reading an incoming request. The parsing of the data isn't asynchronous, just the retrieving of the data.
 
-### Day 30: November 15, 2022
+### Day 32: November 15, 2022
 
 **Today's Progress**: Continued on the React running app
 
 **Learnings:**
-* There's something I don't understand about return data after a fetch. It always returns a promise, even when it looks like the then()s are chained correctly. The thing that always works is setting the state at the inner-most loop. 
+* There's something I don't understand about return data after a fetch. It always returns a promise, even when it looks like the ```then()```s are chained correctly. The thing that always works is setting the state at the inner-most loop. 
 
-### Day 31: November 24, 2022
+### Day 33: November 24, 2022 - Half way!
 
 **Today's Progress**: Back from some time travelling without a laptop. Watched some videos on CSS and continued on the running app. First pass at the app using json-server is close to done.
 
 **Learnings:**
 * CSS properties
   * ```line-height``` sets the height between lines. The default in most browsers seems to be around 1.1-1.4. Headers can look much better with a lower line-height. Parragraphs can look better with a larger line height.
-  * ```gap``` can be used in a grid to easily create space between cells
+  * ```gap``` can be used in a grid to easily create space between cells.
   * ```is()``` and ```where()``` applies CSS to all the items in a list of selector. Used to write more compect CSS.
-  * The HTML attribute ```srcset``` is used to dynamically change images based on media queries
+  * The HTML attribute ```srcset``` is used to dynamically change images based on media queries.
 * Updating a specific value at a URL is not easily done in REST. But one way to do it is through PATCH. The most common pattern is to do a GET, update the object, and then PUT it back. This was helpful: https://www.mnot.net/blog/2012/09/05/patch. Apparently JSON Merge Patch can also be used (?)
-* I keep forgetting the [] after useEffect, which causes infinite loops
+* I keep forgetting the ```[]``` after ```useEffect```. Forgetting this causes infinite loops in React.
 * Flask-Migrate is a Flask adaptation of Alembic. Alembic is a database migration tool for SQLAlchemy.
-* Seems like Flask runs better with venv than Conda. I get module not found errors with ```flask run```. Flask run doesn't seem to run within the conda env. Never resolved here https://stackoverflow.com/questions/59021000/flask-flask-run-not-working-in-conda-environment-windows-python-3-8-conda
+* Seems like Flask runs better with venv than Conda. I get module not found errors with ```flask run```. Flask run doesn't seem to run within the conda env. Never resolved here https://stackoverflow.com/questions/59021000/flask-flask-run-not-working-in-conda-environment-windows-python-3-8-conda.
 
-### Day 32: November 25, 2022
+### Day 34: November 25, 2022
 
 **Today's Progress**: Focusing on buliding out the Flask backend for the running app
 
@@ -617,20 +616,20 @@ for person_to_give in to_give_gifts:
 * Refresher on OSI: Physical (bits), Data Link (frame), Network (packets), Transport (segment), Session (data), Presentation (data), Application (data)
 * Four layers: Database layer, Persistence layer, Business layer, Presentation layer
 * If your ```app.route("/url")``` is missing a trailing slash, Werkzeug will interpret that as that it should not match the URL if a user enters a trailing slash. You can also use ```strict_slahes=False```. Flask doesn't recommend disabling this though.
-* Triple slash in a URI references localhost. E.g. ```"sqlite:///database.db"``` references localhost/database.db. Apparently Tim Berners-Lee regrets this triple slash: https://superuser.com/questions/352133/why-do-file-urls-start-with-3-slashes
+* Triple slash in a URI references localhost. E.g. ```"sqlite:///database.db"``` references localhost/database.db. Apparently Tim Berners-Lee regrets this triple slash: https://superuser.com/questions/352133/why-do-file-urls-start-with-3-slashes.
 
-### Day 33: November 27, 2022
+### Day 35: November 27, 2022
 
 **Today's Progress**: Continued on building out the Flask backend for the running app
 
 **Learnings:**
 * Geting Flask application context errors when trying to populate the database with a script.
 * To keep track of application-level data, Flask accesses current_app and g. This is to avoid having to pass the application around to each function. 
-* ```current_app``` points to the application handling the current activity
+* ```current_app``` points to the application handling the current activity.
 * Flask automatically pushes an application context when handling a request so that the view functions, error handlers, and other functions have access to ```current_app```. Flask also pushes an app context when running Flask CLI commands.
 * Typically the app context has the same lifetime as a request.
-* If you try to reference ```current_app``` outside of an application context, you get the error message that I'm getting. If you have direct access to the app, which I have, it's possible to manually push the app context. This command seems to fix the issue: ```app.app_context().push()```
-* The g object is used to store data in the application context. The g namespace object has the smae lifetime as an application context. Data in g is lost after the context ends. So it can't be used to store data between requests. Sessions and databases are used to store data between requests. Example of what to store in g: database connection. 
+* If you try to reference ```current_app``` outside of an application context, you get the error message that I'm getting. If you have direct access to the app, which I have, it's possible to manually push the app context. This command seems to fix the issue: ```app.app_context().push()```.
+* The g object is used to store data in the application context. The g namespace object has the same lifetime as an application context. Data in g is lost after the context ends. So it can't be used to store data between requests. Sessions and databases are used to store data between requests. Example of what to store in g: database connection. 
 * Flask-Marshmallow is used to JSON serialize the result of Flask-SQLAlchemy queries. Pretty convenient. 
 * Define a Marshmallow Schema by 
 ```
@@ -640,5 +639,5 @@ class Meta:
 
 my_models_schema = MyModelsSchema(many=True)
 ```
-* Then use ```my_models-schema.dump(my_sqlalchemy_return)``` to JSON serialize
+* Then use ```my_models_schema.dump(my_sqlalchemy_return_var)``` to JSON serialize.
 
