@@ -508,7 +508,7 @@ grid-template-columns: repeat(9, 1fr);
 **Today's Progress**: Continued building the running plan React app
 
 **Learnings:**
-* ``` display: inline``` means elements that would normally line break won't, e.g. < p > elements. Width and height cannot be set for inline items.  ``` display: inline``` means the opposite. The element will take the full width. But you can set its width and height. ``` display: inline-block``` is an inline element for which width and height can be set.
+* ```display: inline``` means elements that would normally line break won't, e.g. < p > elements. Width and height cannot be set for inline items.  ``` display: inline``` means the opposite. The element will take the full width. But you can set its width and height. ``` display: inline-block``` is an inline element for which width and height can be set.
 
 ### Day 28: November 8, 2022
 
@@ -639,4 +639,63 @@ class Meta:
 my_models_schema = MyModelsSchema(many=True)
 ```
 * Then use ```my_models_schema.dump(my_sqlalchemy_return_var)``` to JSON serialize.
+* Developing using json-server first, creating the real Flask API later felt like a good idea. But migrating the data from json-server to Flask now feels like a lot of work... I wonder if there's a better way. Maybe setting up Flask routes but returning the data from there would be better? Then it's easy to change still, but at least the routes are set up. 
+* I ran into an issue where Flask said I was overwriting URLs. In fact, it's the function names that need to be unique
 
+```
+app.route("/users")
+def user():
+  # return all users
+```
+```
+app.route("/users/<user_id>")
+def specific user(user_id): <---- This function needs a unique name, but it can use the same URL structure
+  # return specific user
+```
+
+### Day 36: November 28, 2022
+
+**Today's Progress**: Continued on building out the Flask backend for the running app
+
+**Learnings:**
+* The Flask module import error I ran into above was not due to ```flask run``` not detecting the Conda env. It's because the Flask cli module is weird. Running ```flask db init``` produces an import error as Flask can't import my modules. But ```python -m flask db init``` works without any issue.
+* Marshmallow schema field naming errors fail without error. If the model has distance_km and the schema has ```fields = ("distance")``` the distance_km column will simply not be there in the returned JSON after ```dump()``` without any warning.
+* If you want to serialize a single row from the DB, remove ```many=True``` in the Marshmallow schema. Otherwise it will complain that the returned data isn't iterable. I.e. if you only want to use ```MyModel.query.first()```, remove ```many=True```.
+* ```my_date.isocalendar()[1]``` can be used to get the ISO week num of a week. This is the current week num, starting with Monday. ```my_date``` is a datetime object.
+* To navigate to last cursor position in VSCode, use ```Alt + RightArrow``` and ```Alt + Leftarrow```.
+* To navigate to actual last edit, use ```Ctrl + K``` and then ```Ctrl + Q```. This is very useful. But there's no history like in PyCharm...
+* ```MyModel.query.delete()``` can be used to delete all rows in a table.
+* To create a Flask conditional based on HTTP request type, do ```flask.request.method == "PUT"```.
+* To get the JSON data from a request in a Flask view, do ```flask.request.get_json()```.
+* This CSS is magic: ```mix-blend-mode: multiply;```. It makes white backgrounds in an image transparent. Works super well.
+* There seems to be a significant difference between these ways of updating state. If I don't define a variable first, the state won't update properly. Maybe because we set the state to a promise in the second one... (?)
+Good state update
+```
+...
+.then((data) => {
+let my_data = data["my_var"];
+setMyState(my_data);
+});
+```
+Bad state update - undefined
+```
+...
+.then((data) => {
+setMyState(data["my_var"]);
+});
+```
+* This seems to be the best pattern to get the value from a fetch Promise.
+```
+const getMyData = async () => {
+  const data = await fetch("/my-url");
+  const dataJSON = await data.json();
+  return dataJSON;
+}
+```
+// Then in useEffect or some other function:
+```
+getMyData().then((result) => {
+  // do something with the result
+});
+
+```
