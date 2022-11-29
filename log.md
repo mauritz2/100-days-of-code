@@ -699,3 +699,23 @@ getMyData().then((result) => {
 });
 
 ```
+### Day 37: November 29, 2022
+
+**Today's Progress**: Continued on the running app
+
+**Learnings:**
+* React state should be considered immutable! On state change, React only does a shallow check to check if the object is the same. If React thinks it's the same object it won't re-render the component (!!). Apparently if you use the spread operator ... React will consider it a new object.
+* React has a Virtual DOM (VDOM), an abstraction layer on top of the DOM. Changes go to the VDOM first. Then Reacts diffs the VDOM vs. the DOM. React only updates the real DOM with what has changed.
+* React schedules a render every time the state of a component changes. Scheduling means React will try to find the best time to re-render. When a component re-renders, all its child components re-render (!).
+* As outlined above: if the reference to a prop stays the same the component won't re-render
+* State changes in React are asynchronous (!!). This explains why I get weird console log results as below:
+```
+console.log(myState):
+>>> "my_val"
+setMyState("my_updated_val");
+console.log(myState);
+>> "my_val" (?!)
+```
+* To create a CSS selector for a specific input type use ```input[type=text] {}```
+
+**Project** https://github.com/mauritz2/eighty-twenty-running
