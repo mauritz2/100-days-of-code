@@ -722,13 +722,25 @@ console.log(myState);
 
 ### Day 38: November 30, 2022
 
-**Today's Progress**: Continued on the running app
+**Today's Progress**: Continued on the running app.
 
 **Learnings:**
-* Modulus is the same in JS as Python: ```%```
-* ```.map()``` is an array-function. Can't be used for objects. But there are methods to turn objects into arrays. E.g. ```Object.entries(my_obj);```
+* Modulus is the same in JS as Python: ```%```.
+* ```.map()``` is an array-function. Can't be used for objects. But there are methods to turn objects into arrays. E.g. ```Object.entries(my_obj);```.
 * If you use ```display:none;``` you can't have an animation of it going to ```display:block;```. Instead, always keep the element as ```display:block;``` but set height or opacity to 0. Then remove those constraints and animate that transition. Opacity 0 elements can still be interacted with though, so height 0 is probably best.
 * Ran into an issue where a parent element had ```max-height:0px;```, but the child elements were still showing. Solution is to put ```overflow:hidden;``` on the parent element. 
 * To do my transition I set ```max-height``` to 0, and then to 50000px when it should be shown. It didn't work because apparently that number is too high and not valid. Setting to 500px fixed it.
+
+**Project** https://github.com/mauritz2/eighty-twenty-running
+
+
+### Day 38: November 30, 2022
+
+**Today's Progress**: Continued on the running app.
+
+**Learnings:**
+* To set default value for props, import PropTypes.
+* ```Ctrl + G``` and then a number navigates to that row number
+* ```Ctrl + P``` lets you navigate to a file by name. Very useful!
 
 **Project** https://github.com/mauritz2/eighty-twenty-running
