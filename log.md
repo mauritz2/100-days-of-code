@@ -734,13 +734,13 @@ console.log(myState);
 **Project** https://github.com/mauritz2/eighty-twenty-running
 
 
-### Day 38: November 30, 2022
+### Day 39: December 1, 2022
 
-**Today's Progress**: Continued on the running app.
+**Today's Progress**: Finished the running up. Next step is to try to deploy it.
 
 **Learnings:**
 * To set default value for props, import PropTypes.
-* ```Ctrl + G``` and then a number navigates to that row number
+* ```Ctrl + G``` and then a number navigates to that row number.
 * ```Ctrl + P``` lets you navigate to a file by name. Very useful!
 
 **Project** https://github.com/mauritz2/eighty-twenty-running
