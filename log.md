@@ -744,3 +744,12 @@ console.log(myState);
 * ```Ctrl + P``` lets you navigate to a file by name. Very useful!
 
 **Project** https://github.com/mauritz2/eighty-twenty-running
+
+### Day 40: December 2, 2022
+
+**Today's Progress**: Did the first two days of advent of code
+
+**Learnings:**
+* sort() doesn't return the list in Python, sorted() does return the list
+
+**Project** https://github.com/mauritz2/advent-of-code-2022
