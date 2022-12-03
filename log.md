@@ -751,5 +751,20 @@ console.log(myState);
 
 **Learnings:**
 * sort() doesn't return the list in Python, sorted() does return the list
+* Forward proxy - lets a computer isolated on a private network connect to the public internet. Reverse proxy - lets a computer on the public internet connect to a private network.
+* nginx can be used for multiple things, but relevant as a reverse proxy in Flask deployments. nginx is pronounced "engine x". It is the first to receive all the client requests. This is used for clients to be able to connect to the React app. Install in Linux through ```sudo apt-get install nginx```.
+* To run the Flask API, Gunicorn can be used. Gunicorn is a web server Python package. Install through ```pip install gunicorn```.
+* Run Guniorn through ```gunicorn -b 127.0.0.1:5000 api:app```. 
+
+**Project** https://github.com/mauritz2/advent-of-code-2022
+
+### Day 41: December 3, 2022
+
+**Today's Progress**: Day 3 advent of code.
+
+**Learnings:**
+* ```string.ascii_lowercase``` can be used to get all lowercase letters.
+* To get the intersection between multiple sets, do: ```set.intersection(set1, set2, set3)```. Sets can also be in a list: ```set.intersection(*set_list)```.
+* ```str.strip()``` removes newlines from a string.
 
 **Project** https://github.com/mauritz2/advent-of-code-2022
