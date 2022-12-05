@@ -768,3 +768,19 @@ console.log(myState);
 * ```str.strip()``` removes newlines from a string.
 
 **Project** https://github.com/mauritz2/advent-of-code-2022
+
+### Day 42: December 4, 2022
+
+**Today's Progress**: Day 4 advent of code.
+
+**Project** https://github.com/mauritz2/advent-of-code-2022
+
+
+### Day 43: December 5, 2022
+
+**Today's Progress**: Day 5 advent of code.
+
+**Learnings:**
+* Reading column data through ```open()``` isn't possible. But it's possible to do ```.readlines()```, then loop through each row and extract each column. 
+
+**Project** https://github.com/mauritz2/advent-of-code-2022
