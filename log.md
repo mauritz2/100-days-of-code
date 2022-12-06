@@ -784,3 +784,17 @@ console.log(myState);
 * Reading column data through ```open()``` isn't possible. But it's possible to do ```.readlines()```, then loop through each row and extract each column. 
 
 **Project** https://github.com/mauritz2/advent-of-code-2022
+
+### Day 44: December 6, 2022
+
+**Today's Progress**: Day 6 advent of code.
+
+**Learnings:**
+* For Python regex import ```import re```.
+* ```?!``` is negative lookahead. A char not followed by another char. E.g. to match an )```a)``` not followed by a )```b)```: ```a(?!b)```.
+* ```?=``` is positive lookahead. I.e match an ```a``` followed by a ```b```. ```a(?=b)```
+* ```re.match()``` only searches in the beginning of a string
+* ```re.search()``` searches anywhere in a string
+* Define a regex through ```r``` at the beginning of the regex str. Without the ```r``` I ran into an issue where the regex wouldn't match properly.
+
+**Project** https://github.com/mauritz2/advent-of-code-2022
