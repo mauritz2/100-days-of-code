@@ -798,3 +798,16 @@ console.log(myState);
 * Define a regex through ```r``` at the beginning of the regex str. Without the ```r``` I ran into an issue where the regex wouldn't match properly.
 
 **Project** https://github.com/mauritz2/advent-of-code-2022
+
+### Day 45: December 7, 2022
+
+**Today's Progress**: Day 7 advent of code.
+
+**Learnings:**
+* A nested dictionary structure of arbitrary length is usually not the best way to go.
+* Sum a dict: ```sum(my_dict.values())```.
+* List comprehension for dict works. Return a dict with all values under 100:
+```{k:v for k, v in my_dict.items() if v < 100}```.
+* To add thousand separators to a f-string, simply add ```:,``` after your variable like ```f"Value: {my_var:,}```
+
+**Project** https://github.com/mauritz2/advent-of-code-2022
