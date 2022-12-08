@@ -819,5 +819,11 @@ console.log(myState);
 **Learnings:**
 * Lambda to strip each row of newlines
 ``` new_data = list(map(lambda x: x.strip(), old_data)) ```. Map doesn't return a list, therefore ```list()``` is needed.
+* Deployed the running app to my Linux server used nginx and Gunicorn:
+  * The app was loading but was 502 errors on API requests. Making project executable fixed it: ```chmod 0755 /to/project``` 
+  * Removing the "proxy" in ```package.json``` seems to be a must
+  * ```npm run build``` updates the build folder
+  * Seems best to use routes that start wth /api or similar to make it easy for nginx to detect what's a local file and what's an API request.
+* I should finally get the debugger running in VSCode. Today's advent of code took a lot longer because I didn't have it.
 
 **Project** https://github.com/mauritz2/advent-of-code-2022
