@@ -811,3 +811,13 @@ console.log(myState);
 * To add thousand separators to a f-string, simply add ```:,``` after your variable like ```f"Value: {my_var:,}```
 
 **Project** https://github.com/mauritz2/advent-of-code-2022
+
+### Day 46: December 8, 2022
+
+**Today's Progress**: Day 8 advent of code.
+
+**Learnings:**
+* Lambda to strip each row of newlines
+``` new_data = list(map(lambda x: x.strip(), old_data)) ```. Map doesn't return a list, therefore ```list()``` is needed.
+
+**Project** https://github.com/mauritz2/advent-of-code-2022
