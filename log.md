@@ -827,3 +827,15 @@ console.log(myState);
 * I should finally get the debugger running in VSCode. Today's advent of code took a lot longer because I didn't have it.
 
 **Project** https://github.com/mauritz2/advent-of-code-2022
+
+### Day 47: December 12, 2022
+
+**Today's Progress**: Continued on my own location game
+
+**Learnings:**
+* Got a lot of CORS errors on this app, which I didn't get on the running React app. To avoid: set up the ```proxy``` in the package.json. And DON'T use absolute URLs in ```fetch``` requests. That resolved the CORS issues this time.
+* To select an interpreter in VS Code Ctrl+ Shift + P. Then "Python: Select Interpreter". It scans Conda and VENV envs automatically so select from drop-down.
+* For ```socketio.on()``` - add an empty return at the end. Otherwise React waits for a long time for something to be sent back.
+
+
+**Project** https://github.com/mauritz2/advent-of-code-2022
