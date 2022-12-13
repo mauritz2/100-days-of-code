@@ -830,12 +830,28 @@ console.log(myState);
 
 ### Day 47: December 12, 2022
 
-**Today's Progress**: Continued on my own location game
+**Today's Progress**: Continued on my own game
 
 **Learnings:**
 * Got a lot of CORS errors on this app, which I didn't get on the running React app. To avoid: set up the ```proxy``` in the package.json. And DON'T use absolute URLs in ```fetch``` requests. That resolved the CORS issues this time.
 * To select an interpreter in VS Code Ctrl+ Shift + P. Then "Python: Select Interpreter". It scans Conda and VENV envs automatically so select from drop-down.
 * For ```socketio.on()``` - add an empty return at the end. Otherwise React waits for a long time for something to be sent back.
+* Edit: Actually the return isn't needed. The issue was with how I initialized the SocketIOs socket incorrectly. Way that worked:
+```
+  const socket = io("localhost:5000/", {
+    transports: ["websocket"],
+  });
+```
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 48: December 13, 2022
+
+**Today's Progress**: Continued on my own game
+
+**Learnings:**
+* To pass an onsubmit event using TypeScript, the correct type is ```React.FormEvent<HTMLFormElement>```
+* Use ```Ctrl+1``` and ```Ctrl+2``` to navigate between two split screens in VSCode
 
 
-**Project** https://github.com/mauritz2/advent-of-code-2022
+**Project** https://github.com/mauritz2/location-game
