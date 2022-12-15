@@ -855,3 +855,12 @@ console.log(myState);
 
 
 **Project** https://github.com/mauritz2/location-game
+
+### Day 49: December 15, 2022
+
+**Today's Progress**: Continued on my own game
+
+**Learnings:**
+* I should do more TDD again
+
+**Project** https://github.com/mauritz2/location-game
