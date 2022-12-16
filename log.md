@@ -864,3 +864,9 @@ console.log(myState);
 * I should do more TDD again
 
 **Project** https://github.com/mauritz2/location-game
+
+### Day 50: December 16, 2022
+
+**Today's Progress**: Continued on my own game
+
+**Project** https://github.com/mauritz2/location-game
