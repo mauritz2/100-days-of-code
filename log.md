@@ -870,3 +870,12 @@ console.log(myState);
 **Today's Progress**: Continued on my own game
 
 **Project** https://github.com/mauritz2/location-game
+
+### Day 51: December 17, 2022
+
+**Today's Progress**: Continued on my own game
+
+**Learnings:**
+* Conda randomly stopped working in the console. Had to re-install it again. Saving the env folder and then putting it back after re-install didn't save the envs.
+
+**Project** https://github.com/mauritz2/location-game
