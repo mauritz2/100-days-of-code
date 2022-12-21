@@ -879,3 +879,29 @@ console.log(myState);
 * Conda randomly stopped working in the console. Had to re-install it again. Saving the env folder and then putting it back after re-install didn't save the envs.
 
 **Project** https://github.com/mauritz2/location-game
+
+### Day 52: December 18, 2022
+
+**Today's Progress**: Continued on my own game
+
+**Learnings:**
+* React context = makes state universally accessible
+* React code can go outside of the component code, e.g. when instantiating sockets etc.
+* ```debugger``` causes the browser to break at that line of code
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 53: December 20, 2022
+
+**Today's Progress**: Continued on my own game
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 54: December 21, 2022
+
+**Today's Progress**: Continued on my own game
+
+**Learnings:**
+* ```!.``` in typescript indicates that the var can't be null. This prevents typescript from complaining that the var might be null.
+
+**Project** https://github.com/mauritz2/location-game
