@@ -905,3 +905,9 @@ console.log(myState);
 * ```!.``` in typescript indicates that the var can't be null. This prevents typescript from complaining that the var might be null.
 
 **Project** https://github.com/mauritz2/location-game
+
+### Day 55: December 23, 2022
+
+**Today's Progress**: Continued on my own game
+
+**Project** https://github.com/mauritz2/location-game
