@@ -911,3 +911,9 @@ console.log(myState);
 **Today's Progress**: Continued on my own game
 
 **Project** https://github.com/mauritz2/location-game
+
+### Day 56: December 24, 2022
+
+**Today's Progress**: Continued on my own game - fixing the state context for characters...
+
+**Project** https://github.com/mauritz2/location-game
