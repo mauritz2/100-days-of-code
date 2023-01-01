@@ -917,3 +917,25 @@ console.log(myState);
 **Today's Progress**: Continued on my own game - fixing the state context for characters...
 
 **Project** https://github.com/mauritz2/location-game
+
+### Day 57: December 30, 2022
+
+**Today's Progress**: Continued on my own game
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 58: December 31, 2022
+
+**Today's Progress**: Started on Day 9 in Advent of Code
+
+**Project** https://github.com/mauritz2/advent-of-code-2022
+
+### Day 59: January 1, 2023
+
+**Today's Progress**: Continued on Day 9 of Advent of Code. Set up the VS Code debugger finally. 
+
+**Learnings**
+* Ran into an issue when creating a 2D matrix that changing a value in one row changed the same value in all rows. Explained here: https://www.geeksforgeeks.org/python-using-2d-arrays-lists-the-right-way/. Best to avoid list comprehension or * when creating a 2D matrix in pure Python.  
+
+**Project** https://github.com/mauritz2/advent-of-code-2022
+
