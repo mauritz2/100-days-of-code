@@ -936,6 +936,21 @@ console.log(myState);
 
 **Learnings**
 * Ran into an issue when creating a 2D matrix that changing a value in one row changed the same value in all rows. Explained here: https://www.geeksforgeeks.org/python-using-2d-arrays-lists-the-right-way/. Best to avoid list comprehension or * when creating a 2D matrix in pure Python.  
+* ```remove()``` removes the FIRST matching element by value. To remove all elements in list by value ```list(filter((2).__ne__, x))```
+
+**Project** https://github.com/mauritz2/advent-of-code-2022
+
+### Day 60: January 2, 2023
+
+**Today's Progress**: Continued on Day 10 and Day 11 of Advent of Code.
+
+**Learnings**
+* Doesn't seem to be a VSCode shortcut for running current file. Set it to ```Ctrl + R```.
+* Python automatically switches from int to bigint if ints are too big. Bigints can cause huge performance issues. Switching to ```np.array()``` can help. 
+* ```np.array``` does not have ```pop()``` use slicing to get the item you want, and then run ```new_array = np.delete(old_array, -1)``` to delete the selected item by index.
+* ```np.append()``` doesn't append to an array, it just returns a copy of the array with the values appended. So need to do ```new_arr = np.append(old_arr, 1337)```
+* If numpy ints get too large, it might overflow them into negative numbers (!). It does this implicitly. https://numpy.org/doc/stable/user/basics.types.html
+* If an int is too large for int64 in numpty the dtype can be set to "object". But that's much slower... I got the same speed as the normal Python list
 
 **Project** https://github.com/mauritz2/advent-of-code-2022
 
