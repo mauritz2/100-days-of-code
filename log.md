@@ -950,7 +950,33 @@ console.log(myState);
 * ```np.array``` does not have ```pop()``` use slicing to get the item you want, and then run ```new_array = np.delete(old_array, -1)``` to delete the selected item by index.
 * ```np.append()``` doesn't append to an array, it just returns a copy of the array with the values appended. So need to do ```new_arr = np.append(old_arr, 1337)```
 * If numpy ints get too large, it might overflow them into negative numbers (!). It does this implicitly. https://numpy.org/doc/stable/user/basics.types.html
-* If an int is too large for int64 in numpty the dtype can be set to "object". But that's much slower... I got the same speed as the normal Python list
+* If an int is too large for int64 in numpy the dtype can be set to "object". But that's much slower... I got the same speed as the normal Python list
 
 **Project** https://github.com/mauritz2/advent-of-code-2022
+
+### Day 61: January 3, 2023
+
+**Today's Progress**: Continued on my own game
+
+**Learnings**
+* Create a React context through ```React.createContext()```
+* Every context object comes with a Provider React component to allow components to subscribe to content changes.
+* A Provider accepts a value prop that is passed to downstream components consuming the context through the Provider. 
+* All consumers that are descendants of a Provider will re-render whenever the Provider's value prop changes.
+* I currently have resources set up with the App components as a descendant. Meaning that when resources update, the entire App is re-rendered. Also, any component under App can access the resources to modify them (I think).
+* ```useContext(MyContext)``` is a React hook to subscribe to a context from a component. ```useContext(MyContext)``` returns the value for the context you passed. Since my entire App is wrapped in the same Provider, any call to ```useContext(MyContext)``` will get the same value, currently resources. 
+* ```useContext(MyContext)``` always searches for the closest Provider above the component that calls it. Since I only have one Provider for the entire app this shouldn't be an issue.
+
+**Project** https://github.com/mauritz2/location-game
+
+
+### Day 62: January 4, 2023
+
+**Today's Progress**: Continued on my own game
+
+**Learnings**
+* To define an array holding JSX elements in TypeScript: ```let myList: Array<JSX.Element> = [];```
+
+**Project** https://github.com/mauritz2/location-game
+
 
