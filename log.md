@@ -985,8 +985,7 @@ console.log(myState);
 **Today's Progress**: Continued on my own game
 
 **Learnings**
-* To indicate a Python dataclass can have multiple values. Use ```Union```, i.e.
-```test_var: Union[str, int]```
+* To indicate a Python dataclass can have multiple values. Use ```Union```, i.e.```test_var: Union[str, int]``` Edit: apparently ```|``` has this effect for Python 3.
 * When passing data through ```socket.emit("MY_EVENT", my_data)```, if ```my_data``` is just an int or str (i.e. not an object/JSON) you can just reference it straight away on the backend. On the backend I tried to do 
 ```
 socketio.on("MY_EVENT):
@@ -994,6 +993,7 @@ def my_event(data):
   data["var_name"] 
 ```
 but it's fine to just do:
+```
 socketio.on("MY_EVENT):
 def my_event(my_data)
 func_to_call(my_data)
