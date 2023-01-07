@@ -996,10 +996,29 @@ but it's fine to just do:
 ```
 socketio.on("MY_EVENT):
 def my_event(my_data)
-func_to_call(my_data)
-socketio.on("MY_EVENT):
+  func_to_call(my_data)
 ```
 
 **Project** https://github.com/mauritz2/location-game
 
+### Day 64: January 6, 2023
+
+**Today's Progress**: Continued on my own game
+
+**Learnings**
+* Ran into an issue where TypeScript wouldn't work properly with Sets. Apparently Sets are new in JS. Changing tsconfig.json to ```target:es6``` fixed the issue.
+* Sets exist in JS, but it's not possible to do ```diff = set_a - set_b``` as in Python. Had to do ```diff = new Set([...set_a].filter(x => !.set_b.has(x)));```to get the diff between sets.
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 65: January 7, 2023
+
+**Today's Progress**: Continued on my own game. Made trading in the market work! First location to actually have the actions it was designed to have.
+
+**Learnings**
+* Ran into a TypeScript issue today that I didn't understand well. The TypeScript wouldn't accept a function as a prop until I added a default value to where the prop is passed, syntax as below. Might be because createCard in this instance would be named function vs. a const, not sure, but this syntax solved it.
+```{ createCard = () => {} }: dataFormProps```
+* The "else" case in a Python ```match``` statement is ```case other ```
+
+**Project** https://github.com/mauritz2/location-game
 
