@@ -1019,6 +1019,30 @@ def my_event(my_data)
 * Ran into a TypeScript issue today that I didn't understand well. The TypeScript wouldn't accept a function as a prop until I added a default value to where the prop is passed, syntax as below. Might be because createCard in this instance would be named function vs. a const, not sure, but this syntax solved it.
 ```{ createCard = () => {} }: dataFormProps```
 * The "else" case in a Python ```match``` statement is ```case other ```
+* To import a specific function from a file use ```import {myFunc} from "./folder``` with the curly braces around myFunc. Otherwise TypeScript won't compile.  
+* Shortcut for multi-cursor in VS code is ```Ctrl + Alt + Arrow (Up/Down)```. Very convenient. 
+
+**Project** https://github.com/mauritz2/location-game
+
+
+### Day 66: January 8, 2023
+
+**Today's Progress**: Continued on my own game.
+* An id selector has higher specificity than a class selector in CSS.
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 67: January 14, 2023
+
+**Today's Progress**: Continued on my own game.
+* VS Code doesn't natively support code jumping. But can add a custom shortcut to jump up/down as outlined here: https://stackoverflow.com/questions/47040925/microsoft-vs-code-jump-10-lines-vertically-at-once. Very useful.
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 68: January 16, 2023
+
+**Today's Progress**: Continued on my own game.
+*
 
 **Project** https://github.com/mauritz2/location-game
 
