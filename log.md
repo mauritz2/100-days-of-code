@@ -1042,7 +1042,12 @@ def my_event(my_data)
 ### Day 68: January 16, 2023
 
 **Today's Progress**: Continued on my own game.
-*
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 67: January 17, 2023
+
+**Today's Progress**: Continued on my own game.
 
 **Project** https://github.com/mauritz2/location-game
 
