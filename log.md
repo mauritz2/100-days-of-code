@@ -1051,3 +1051,17 @@ def my_event(my_data)
 
 **Project** https://github.com/mauritz2/location-game
 
+  
+  
+  
+  
+  
+  
+### Day 70: January 24, 2023
+
+**Today's Progress**: Started learning Node.JS and Express
+* Installed Cygwin for a nicer Linux-like terminal. To start the file explorer from Cygwin, do ```cygstart .```.
+* To resolve error ```UNABLE_TO_GET_ISSUER_CERT_LOCALLY```: ```npm config set strict-ssl false```.
+* ``````` is a special character in JS, equivalent of a Python f-string. Vars are defined in the string as ${my_var}.
+* npm is used to install packages, npx is used to run packages installed through npm.
+ * When using node.js and react they both have their separate package.json. The proxy settings need to go into the react package.json.
