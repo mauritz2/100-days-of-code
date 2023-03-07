@@ -1045,18 +1045,12 @@ def my_event(my_data)
 
 **Project** https://github.com/mauritz2/location-game
 
-### Day 67: January 17, 2023
+### Day 69: January 17, 2023
 
 **Today's Progress**: Continued on my own game.
 
 **Project** https://github.com/mauritz2/location-game
 
-  
-  
-  
-  
-  
-  
 ### Day 70: January 24, 2023
 
 **Today's Progress**: Started learning Node.JS and Express
@@ -1065,3 +1059,30 @@ def my_event(my_data)
 * ``````` is a special character in JS, equivalent of a Python f-string. Vars are defined in the string as ${my_var}.
 * npm is used to install packages, npx is used to run packages installed through npm.
  * When using node.js and react they both have their separate package.json. The proxy settings need to go into the react package.json.
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 71: March 05, 2023
+
+**Today's Progress**: My own game didn't turn out very fun, thought about how to make it more fun but instead pivoting to build another existing game: Bluffstopp. Also switching to Mac.
+
+**Project** https://github.com/mauritz2/bluffstopp
+
+### Day 72: March 06, 2023
+
+**Today's Progress**: Continued on Bluffstopp
+
+**Project** https://github.com/mauritz2/bluffstopp
+
+### Day 73: March 07, 2023
+
+**Today's Progress**: Continued on Bluffstopp
+* Some recurring challenges with the SocketIO projects I've created and their solutions:
+  * The Python SocketIO servers runs on 127.0.0.1, but the JavaScript SocketIO client runs on the IPv6 version of localhost. This leads to very weird behavior. Better to not reference "localhost" it seems.
+  * TypeScript can be a real time sink, e.g. when having to find types such as for an array of JSX elements or for the SocketIO client instance. Decided to switch back to JS for now...
+  * Getting imports to work properly when running normally and through Pytest has taken time. Finally figured out an approach that works. The key that I was missing was that it's best to start the backend one level above the test and game logic folders. That way the structure for tests and the backend are very similar and they can use the same paths. This was very helpful: https://blog.ionelmc.ro/2014/05/25/python-packaging/#the-structure%3E
+* Shortcut for all commands in VS Code is ```Cmd + Shift + P```. Use this to configure tests or interpreters
+* Ran into an issue where VS Code said I didn't have permissions to push to my remote Github repo. Creating a new set of SSH keys through the Git terminal resolved the issue.
+* 
+**Project** https://github.com/mauritz2/bluffstopp
+I
