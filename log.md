@@ -1083,6 +1083,7 @@ def my_event(my_data)
   * Getting imports to work properly when running normally and through Pytest has taken time. Finally figured out an approach that works. The key that I was missing was that it's best to start the backend one level above the test and game logic folders. That way the structure for tests and the backend are very similar and they can use the same paths. This was very helpful: https://blog.ionelmc.ro/2014/05/25/python-packaging/#the-structure%3E
 * Shortcut for all commands in VS Code is ```Cmd + Shift + P```. Use this to configure tests or interpreters
 * Ran into an issue where VS Code said I didn't have permissions to push to my remote Github repo. Creating a new set of SSH keys through the Git terminal resolved the issue.
-* 
+* Assignment statements in Python do not copy objects, it just creates a binding between the two objects. Sometimes I forget to add the ```.copy()```. Fixed a round ending bug resulting from the var holding all players, and the var holding remaining players were linked and not stand-alone copies.  
+
 **Project** https://github.com/mauritz2/bluffstopp
 I
