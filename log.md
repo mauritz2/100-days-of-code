@@ -1084,6 +1084,6 @@ def my_event(my_data)
 * Shortcut for all commands in VS Code is ```Cmd + Shift + P```. Use this to configure tests or interpreters
 * Ran into an issue where VS Code said I didn't have permissions to push to my remote Github repo. Creating a new set of SSH keys through the Git terminal resolved the issue.
 * Assignment statements in Python do not copy objects, it just creates a binding between the two objects. Sometimes I forget to add the ```.copy()```. Fixed a round ending bug resulting from the var holding all players, and the var holding remaining players were linked and not stand-alone copies.  
+* Note to self: when working with sockets always read the full stack trace. Since emits are asynch I can send two events where the first one fails and the second one fails because the first one failed. In that case the stack trace will show the second failure at the bottom. But that failure won't be the root cause.
 
 **Project** https://github.com/mauritz2/bluffstopp
-I
