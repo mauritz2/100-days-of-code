@@ -1087,3 +1087,25 @@ def my_event(my_data)
 * Note to self: when working with sockets always read the full stack trace. Since emits are asynch I can send two events where the first one fails and the second one fails because the first one failed. In that case the stack trace will show the second failure at the bottom. But that failure won't be the root cause.
 
 **Project** https://github.com/mauritz2/bluffstopp
+
+### Day 74: March 8, 2023
+
+**Today's Progress**: Continued on the bluffstopp game
+
+**Learnings**
+* Ran into the web socket connection issue again. They come up, disappear and then come up later. When the issue comes up the client raises websocket errors complaining it's getting bad responses from the server. It still connects most of the time, but it can take over a minute. The server still appears to process emits OK during the time when the client is throwing errors. So seems like this is a client issue. Added ```ws://```ahead of the connection URL in App.js and that seems to have fixed it for now. But wouldn't surprise me if it comes up again. The best way forward would be to get more detailed logging on what response the server is providing that the client is considering "bad". Will look into it if this issue comes up again.
+* New theory on the issue above: it's a Safari issue. When I run the web app in Chrome it works perfectly. The app works and there are no errors in the dev console. But opening it in Safari results in "bad server response" errors until it eventually connects after 1-3 minutes (most of the time). Could be related to Safari security settings in some way. Tried Googling and found people running into similar but slightly different issues. This will most likely have to be resolved when deploying anyways. As the "proxy" in package.json goes out when deploying, I'll just develop in Chrome and will troubleshoot when running without the proxy.
+* Blank pages in React can be triggered by setting the incorrect data type in ```useState()```
+* To negate a boolean in Python, use `not`. `~`is only used to negate booleans in Pandas
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 75: March 9, 2023
+
+**Today's Progress**: Continued on the bluffstopp game
+
+**Learnings**
+* There's a big difference between ```checked```and ```defaultChecked``` on a radio button or checkbox. ```checked``` appears to disallow any other selection in the radio button group (at least on Chrome). ```defaultChecked``` allows the user to override the default, so it's more useful.
+* ```debugger```in JS is very useful when evaluating why an if statement isn't working
+
+**Project** https://github.com/mauritz2/location-game
