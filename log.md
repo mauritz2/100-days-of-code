@@ -1105,7 +1105,18 @@ def my_event(my_data)
 **Today's Progress**: Continued on the bluffstopp game
 
 **Learnings**
-* There's a big difference between ```checked```and ```defaultChecked``` on a radio button or checkbox. ```checked``` appears to disallow any other selection in the radio button group (at least on Chrome). ```defaultChecked``` allows the user to override the default, so it's more useful.
+* There's a big difference between ```checked```and ```defaultChecked``` on a radio button or checkbox. ```checked``` appears to disallow any other selection in the radio button group (at least on Chrome). ```defaultChecked``` allows the user to override the default, so it's more useful
 * ```debugger```in JS is very useful when evaluating why an if statement isn't working
+* When importing Constants from another file they need to be exported. Otherwise JS will just silently import them as ```undefined```. See https://stackoverflow.com/questions/40560660/es6-how-to-import-const-after-export
+* For JS testing every function has to be exported... Best-practice structure appears to be to clarify what exports are just for testing https://stackoverflow.com/questions/54116070/how-can-i-unit-test-non-exported-functions
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 76: March 12, 2023
+
+**Today's Progress**: Continued on the bluffstopp game
+
+**Learnings**
+* React components can't render objects. It will throw objects are not valid as a react child error. The object has to be turned into a primitive type for rendering to work.
 
 **Project** https://github.com/mauritz2/location-game
