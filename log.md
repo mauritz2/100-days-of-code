@@ -1120,3 +1120,32 @@ def my_event(my_data)
 * React components can't render objects. It will throw objects are not valid as a react child error. The object has to be turned into a primitive type for rendering to work.
 
 **Project** https://github.com/mauritz2/location-game
+
+### Day 77: March 19, 2023
+
+**Today's Progress**: Continued on the bluffstopp game
+
+**Learnings**
+* React was throwing an error that Objects can't be rendered. The error message turned out to be misleading. The issue was that I was trying to render an array of JSX elements without wrapping the array in some tag. Adding a fragment tag around the array fixed it
+* There's a way to make variables in a constant reference each other. Make the const a function and and create all vars as ```this.myVar = "test";```
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 78: March 26, 2023
+
+**Today's Progress**: Continued on the bluffstopp game
+
+**Learnings**
+* Used logger.debug() to fix a bug - very useful since ```debugger```is clunky
+* ```String(my_var)``` turns a boolean into a string without changing my_var 
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 79: April 2, 2023
+
+**Today's Progress**: Continued on the bluffstopp game
+
+**Learnings**
+* ```my_list.index("my_list_item__str")``` is used to find the index of a list item in Python
+
+**Project** https://github.com/mauritz2/location-game
