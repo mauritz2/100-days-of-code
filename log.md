@@ -1149,3 +1149,22 @@ def my_event(my_data)
 * ```my_list.index("my_list_item__str")``` is used to find the index of a list item in Python
 
 **Project** https://github.com/mauritz2/location-game
+
+### Day 80: April 9, 2023
+
+**Today's Progress**: Continued on the bluffstopp game
+
+**Learnings**
+* It's not Pythonic to use getters and setters. Standard is to just reference to property ```my_class.my_property``` and setting it as ```my_class.my_property = new_val```. If more advanced setting and getting is needed, use the ```@property```decorator. https://stackoverflow.com/questions/2627002/whats-the-pythonic-way-to-use-getters-and-setters
+* The ```@property```decorator means that you can start referencing properties and when new logic needs to be added to getting or setting there won't be any need to change the references (!). This is why I was doing getters/setters in the first place, to avoid having to change my code later. But turns out the ```@property```decorator is all I needed to use to make this work anyways.
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 81: April 16, 2023
+
+**Today's Progress**: Continued on the bluffstopp game
+
+**Learnings**
+* Common cause of bugs is that the game state isn't refreshed by emitting the update event - so the game is updated on the backend, not just updated in the UI
+
+**Project** https://github.com/mauritz2/location-game
