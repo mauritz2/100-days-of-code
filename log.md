@@ -1168,3 +1168,9 @@ def my_event(my_data)
 * Common cause of bugs is that the game state isn't refreshed by emitting the update event - so the game is updated on the backend, not just updated in the UI
 
 **Project** https://github.com/mauritz2/location-game
+
+### Day 82: May 1, 2023
+
+**Today's Progress**: Continued on the bluffstopp game
+
+**Project** https://github.com/mauritz2/location-game
