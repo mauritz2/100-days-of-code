@@ -1174,3 +1174,12 @@ def my_event(my_data)
 **Today's Progress**: Continued on the bluffstopp game
 
 **Project** https://github.com/mauritz2/location-game
+
+### Day 83: May 2, 2023
+
+**Today's Progress**: Continued on the bluffstopp game
+
+**learnings**
+* To work with many images in React, e.g., deck of cards, it's possible to import all images, put them in an object, and then export that obj. That de-clutters the files and make it easier to add the same images in multiple components.
+
+**Project** https://github.com/mauritz2/location-game
