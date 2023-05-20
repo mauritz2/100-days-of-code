@@ -1207,5 +1207,7 @@ x = symbols("x")
 f = x ** 2 + 1
 area = integrate (f, (x, 0, 1))
 ```
+* ```permutations``` in ```ìtertools``` creates permutations based on value ORDER and not on VALUE
+* In general for making tests run: run tests from the same top-level as running the code normally. And give each test folder its' own ```__init__.py```
 
 **Project** https://github.com/mauritz2/location-game
