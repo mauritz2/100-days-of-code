@@ -1183,3 +1183,29 @@ def my_event(my_data)
 * To work with many images in React, e.g., deck of cards, it's possible to import all images, put them in an object, and then export that obj. That de-clutters the files and make it easier to add the same images in multiple components.
 
 **Project** https://github.com/mauritz2/location-game
+
+### Day 84: May 18, 2023
+
+**Today's Progress**: Tried out some of the concepts in the book essential math for data science 
+
+**learnings**
+* SymPy is a python library for doing math with symbols in Python
+* ```Sum()``` can be used to create a sum expression such as ```summation = sum(2 * i for i in range (5))```
+
+**Project** https://github.com/mauritz2/location-game
+
+### Day 85: May 20, 2023
+
+**Today's Progress**: Continued some examples from essential math for data science 
+
+**learnings**
+* To type hint a function in Python import ```from collections.abc import Callable``` and use syntax ```my_func:Callable[[input1_type, input2_type], return_type]```
+* To do integrals in Python using SymPy:
+```
+from sympy import *
+x = symbols("x")
+f = x ** 2 + 1
+area = integrate (f, (x, 0, 1))
+```
+
+**Project** https://github.com/mauritz2/location-game
