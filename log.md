@@ -1192,7 +1192,7 @@ def my_event(my_data)
 * SymPy is a python library for doing math with symbols in Python
 * ```Sum()``` can be used to create a sum expression such as ```summation = sum(2 * i for i in range (5))```
 
-**Project** https://github.com/mauritz2/location-game
+**Project** https://github.com/mauritz2/my-statistics
 
 ### Day 85: May 20, 2023
 
@@ -1210,4 +1210,30 @@ area = integrate (f, (x, 0, 1))
 * ```permutations``` in ```ìtertools``` creates permutations based on value ORDER and not on VALUE
 * In general for making tests run: run tests from the same top-level as running the code normally. And give each test folder its' own ```__init__.py```
 
-**Project** https://github.com/mauritz2/location-game
+**Project** https://github.com/mauritz2/my-statistics
+
+### Day 86: May 25, 2023
+
+**Today's Progress**: Continued some examples from essential math for data science 
+
+**Project** https://github.com/mauritz2/my-statistics
+
+### Day 87: June 4, 2023
+
+**Today's Progress**: Continued some examples from essential math for data science 
+
+**learnings**
+* Lambda can be used to enhance function flexibility as below. The first function call returns a new function. It's then possible to set the lambda value by calling that function. 
+```def myfunc(n):
+  return lambda a : a * n + n
+mydoubler = myfunc(2)
+print(mydoubler(11))```
+* Above was useful in the case below:
+1. The approximate integral function needs to pass several x values into a curve function to approximate the area under the curve. So that function takes a curve function as input that it needs to be able to call with x-values that it defines.
+2. To achieve this we (1) create our curve function, (2) pass it as a lambda to the approximate integral function so that the x value parameter of our curve function is the lambda
+3. This means we give the approximate integral function control to get the value of our curve function for any x that it defines
+* To do approximate comparisons in pytest use ```pytest.approx(value_1, 0.1) == value_2```
+
+**Project** https://github.com/mauritz2/my-statistics
+
+
