@@ -1227,12 +1227,25 @@ area = integrate (f, (x, 0, 1))
 ```def myfunc(n):
   return lambda a : a * n + n
 mydoubler = myfunc(2)
-print(mydoubler(11))```
+print(mydoubler(11))
+```
 * Above was useful in the case below:
 1. The approximate integral function needs to pass several x values into a curve function to approximate the area under the curve. So that function takes a curve function as input that it needs to be able to call with x-values that it defines.
 2. To achieve this we (1) create our curve function, (2) pass it as a lambda to the approximate integral function so that the x value parameter of our curve function is the lambda
 3. This means we give the approximate integral function control to get the value of our curve function for any x that it defines
 * To do approximate comparisons in pytest use ```pytest.approx(value_1, 0.1) == value_2```
+
+**Project** https://github.com/mauritz2/my-statistics
+
+### Day 88: June 5, 2023
+
+**Today's Progress**: Continued some examples from essential math for data science 
+
+**Project** https://github.com/mauritz2/my-statistics
+
+### Day 89: June 24, 2023
+
+**Today's Progress**: Continued some examples from essential math for data science 
 
 **Project** https://github.com/mauritz2/my-statistics
 
