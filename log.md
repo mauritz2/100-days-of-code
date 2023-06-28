@@ -1249,9 +1249,15 @@ print(mydoubler(11))
 
 **Project** https://github.com/mauritz2/my-statistics
 
-### Day 89: June 24, 2023
+### Day 89: June 26, 2023
 
 **Today's Progress**: Continued some building out my statistics package built for learning purposes. Started on linear regression. 
+
+**Project** https://github.com/mauritz2/my-statistics
+
+### Day 90: June 28, 2023
+
+**Today's Progress**: Continued some building out my statistics package built for learning purposes. Continued on linear regression. 
 
 **Project** https://github.com/mauritz2/my-statistics
 
