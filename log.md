@@ -1280,3 +1280,17 @@ print(mydoubler(11))
 **Project** https://github.com/mauritz2/my-statistics
 **learnings**
 * ```pd.Series.any()``` returns true if any element is True. ```pd.Series.all()```returns true when all elemenets are True. Useful when comparing pd.Series in test cases. E.g. when both result and predicted are pd.Series here the result isn't True or False, it's another pd.Series with pair-wise comparisons ```(result == predicted)```. Need to add ```all()```for a single True / False.
+
+### Day 95: July 5, 2023
+
+**Today's Progress**: Started work on a project to assess podcast oral comprehension difficulty 
+
+**Project** https://github.com/mauritz2/podcast-difficulty-assesser
+
+### Day 96: July 6, 2023
+
+**Today's Progress**: Continued on podcast difficulty assesser
+
+**Project** https://github.com/mauritz2/podcast-difficulty-assesser
+
+
