@@ -1286,8 +1286,14 @@ print(mydoubler(11))
 **Today's Progress**: Started work on a project to assess podcast oral comprehension difficulty 
 
 **Project** https://github.com/mauritz2/podcast-difficulty-assesser
-
+  
 ### Day 96: July 6, 2023
+
+**Today's Progress**: Continued on podcast difficulty assesser
+
+**Project** https://github.com/mauritz2/podcast-difficulty-assesser
+
+### Day 97: July 7, 2023
 
 **Today's Progress**: Continued on podcast difficulty assesser
 
