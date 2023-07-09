@@ -1305,4 +1305,10 @@ print(mydoubler(11))
 
 **Project** https://github.com/mauritz2/podcast-difficulty-assesser
 
+### Day 98: July 8, 2023
+
+**Today's Progress**: Final day! Continued on podcast difficulty assesser
+
+**Project** https://github.com/mauritz2/podcast-difficulty-assesser
+
 
